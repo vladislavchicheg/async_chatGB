@@ -23,7 +23,7 @@ def main():
     if "-a" in sys.argv:
         listen_address = sys.argv[sys.argv.index("-a") + 1]
     else:
-        listen_address = "127.0.0.1"
+        listen_address = ""
 
     s = socket(AF_INET, SOCK_STREAM)
     s.bind((listen_address, listen_port))
