@@ -1,15 +1,19 @@
 import sys
 import json
 from socket import *
+from common.variables import ACTION, ACCOUNT_NAME, RESPONSE, MAX_CONNECTIONS, \
+    PRESENCE, TIME, USER, ERROR, DEFAULT_PORT, ALERT, LOGIN
+from common.utils import get_message, send_message
 
 
 def process_client_message(message):
-    if message.get("action") == "presence" and "time" in message and "user" in message:
-        return {"response": 200,
-                "alert": "OK"}
+    if ACTION in message and message[ACTION] == PRESENCE and TIME in message \
+            and USER in message and message[USER][LOGIN] == 'Guest':
+        return {RESPONSE: 200,
+                ALERT: "OK"}
     return {
-        "response": 400,
-        "error": "Bad Request"
+        RESPONSE: 400,
+        ERROR: "Bad Request"
     }
 
 
@@ -19,7 +23,7 @@ def main():
         if listen_port < 1024 or listen_port > 65535:
             raise ValueError("Неверный номер порта!")
     else:
-        listen_port = 7777
+        listen_port = DEFAULT_PORT
     if "-a" in sys.argv:
         listen_address = sys.argv[sys.argv.index("-a") + 1]
     else:
@@ -27,26 +31,16 @@ def main():
 
     s = socket(AF_INET, SOCK_STREAM)
     s.bind((listen_address, listen_port))
-    s.listen(5)
+    s.listen(MAX_CONNECTIONS)
 
     while True:
         client, client_address = s.accept()
         try:
-            encoded_response = client.recv(1024)
-            if isinstance(encoded_response, bytes):
-                json_response = encoded_response.decode("utf-8")
-                response = json.loads(json_response)
-                if isinstance(response, dict):
-                    message_from_client = response
-                else:
-                    raise ValueError
-            else:
-                raise ValueError
-
-            response = process_client_message(message_from_client)
-            json_message = json.dumps(response)
-            encoded_message = json_message.encode("utf-8")
-            client.send(encoded_message)
+            message_from_cient = get_message(client)
+            print(message_from_cient)
+            # {'action': 'presence', 'time': 1573760672.167031, 'user': {'account_name': 'Guest'}}
+            response = process_client_message(message_from_cient)
+            send_message(client, response)
             client.close()
         except (ValueError, json.JSONDecodeError):
             print('Принято некорретное сообщение от клиента.')
