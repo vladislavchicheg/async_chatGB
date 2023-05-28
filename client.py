@@ -19,7 +19,7 @@ def create_presence(login='Guest'):
     return message
 
 
-def precess_response(data):
+def process_response(data):
     if RESPONSE in data:
         if data[RESPONSE] == 200:
             return '200 : OK'
