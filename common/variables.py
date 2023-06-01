@@ -1,5 +1,6 @@
 """Константы"""
 
+import logging
 
 # Порт по умолчанию для сетевого ваимодействия
 DEFAULT_PORT = 7777
@@ -24,3 +25,9 @@ PRESENCE = 'presence'
 RESPONSE = 'response'
 ERROR = 'error'
 ALERT = 'alert'
+
+# логирование
+LOG_FORMATTER = '%(asctime)s %(levelname)s %(filename)s %(message)s'
+SERVER_LOG_FILE = 'logs/server/server.log'
+CLIENT_LOG_FILE = 'logs/client/client.log'
+LOGGING_LEVEL = logging.DEBUG
