@@ -6,8 +6,10 @@ import log.server_config
 from common.variables import ACTION, ACCOUNT_NAME, RESPONSE, MAX_CONNECTIONS, \
     PRESENCE, TIME, USER, ERROR, DEFAULT_PORT, ALERT, LOGIN
 from common.utils import get_message, send_message
+from common.decorators import log
 
 CLIENT_LOGGER = logging.getLogger('server')
+@log
 def process_client_message(message):
     if ACTION in message and message[ACTION] == PRESENCE and TIME in message \
             and USER in message and message[USER][LOGIN] == 'Guest':

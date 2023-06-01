@@ -8,8 +8,12 @@ from socket import *
 from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, \
     RESPONSE, ERROR, DEFAULT_IP_ADDRESS, DEFAULT_PORT, LOGIN
 from common.utils import get_message, send_message
+from common.decorators import log
 
 CLIENT_LOGGER = logging.getLogger('client')
+
+
+@log
 def create_presence(login='Guest'):
     message = {
         ACTION: PRESENCE,
@@ -21,6 +25,7 @@ def create_presence(login='Guest'):
     return message
 
 
+@log
 def process_response(data):
     CLIENT_LOGGER.debug(f'получено сообщение от сервера: {data}')
     if RESPONSE in data:
@@ -58,6 +63,7 @@ def main():
         print('Не удалось декодировать сообщение сервера.')
     except ConnectionRefusedError:
         CLIENT_LOGGER.critical(f'Не удалось подключиться к серверу {server_address}:{server_port}')
+
 
 if __name__ == "__main__":
     main()

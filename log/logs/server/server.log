@@ -1,3 +1,11 @@
 2023-06-01 00:06:54,360 INFO server.py Запущен сервер - порт: 7777 ; адрес:
 2023-06-01 00:07:19,418 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1685563639.4187255, 'user': {'login': 'Guest'}}
 2023-06-01 00:07:19,418 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
+2023-06-01 20:37:35,845 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-01 20:37:40,564 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1685637460.561554, 'user': {'login': 'Guest'}}
+2023-06-01 20:37:40,567 INFO decorators.py  Функция process_client_message() вызвана из функции main()
+2023-06-01 20:37:40,567 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
+2023-06-01 20:53:40,913 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-01 20:53:42,986 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1685638422.9841664, 'user': {'login': 'Guest'}}
+2023-06-01 20:53:42,989 INFO decorators.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1685638422.9841664, 'user': {'login': 'Guest'}},), {} из функции main()
+2023-06-01 20:53:42,989 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
