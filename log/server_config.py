@@ -4,6 +4,8 @@ import logging.handlers
 
 from common.variables import LOG_FORMATTER, SERVER_LOG_FILE, LOGGING_LEVEL
 
+sys.path.append('../')
+
 SERVER_FORMATTER = logging.Formatter(LOG_FORMATTER)
 
 PATH = os.path.dirname(os.path.abspath(__file__))
