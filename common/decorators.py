@@ -17,7 +17,7 @@ def log(func):
     def log_wraper(*args, **kwargs):
         result = func(*args, **kwargs)
         logger.info(f" Функция {func.__name__}() вызвана c параметрами:{args}, {kwargs} из функции "
-                    f"{inspect.stack()[1][3]}()")
+                    f"{inspect.stack()[1][3]}()", stacklevel=2)
         return result
 
     return log_wraper
