@@ -31,3 +31,7 @@ LOG_FORMATTER = '%(asctime)s %(levelname)s %(filename)s %(message)s'
 SERVER_LOG_FILE = 'logs/server/server.log'
 CLIENT_LOG_FILE = 'logs/client/client.log'
 LOGGING_LEVEL = logging.DEBUG
+
+MESSAGE = "message"
+MESSAGE_TEXT = "mess_text"
+SENDER = "sender"
