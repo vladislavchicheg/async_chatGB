@@ -1,9 +1,12 @@
 """Утилиты"""
 
 import json
+
+from common.decorators import log
 from common.variables import MAX_PACKAGE_LENGTH, ENCODING
 
 
+@log
 def get_message(sock):
     encoded_response = sock.recv(MAX_PACKAGE_LENGTH)
     if isinstance(encoded_response, bytes):
@@ -14,7 +17,7 @@ def get_message(sock):
         raise ValueError
     raise ValueError
 
-
+@log
 def send_message(sock, message):
 
     js_message = json.dumps(message)
