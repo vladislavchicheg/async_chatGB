@@ -24,95 +24,78 @@
 2023-06-01 00:07:19,418 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 7777
 2023-06-01 00:07:19,419 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
 2023-06-01 00:07:19,419 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 15:40:19,944 ERROR client.py Не удалось декодировать сообщение сервера.
-2023-06-08 15:57:47,181 INFO client.py 127.0.0.1
-2023-06-08 15:57:47,181 INFO client.py 7777
-2023-06-08 15:57:47,182 INFO client.py listen
-2023-06-08 16:00:31,311 INFO client.py 127.0.0.1
-2023-06-08 16:00:31,311 INFO client.py 7777
-2023-06-08 16:00:31,311 INFO client.py listen
-2023-06-08 16:07:51,793 INFO client.py 127.0.0.1
-2023-06-08 16:07:51,794 INFO client.py 7777
-2023-06-08 16:07:51,794 INFO client.py listen
-2023-06-08 16:34:34,052 INFO client.py {'response': 200}
-2023-06-08 16:35:08,123 INFO client.py {'response': 200}
-2023-06-08 16:39:00,815 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 16:39:00,815 INFO client.py {'response': 200}
-2023-06-08 16:39:00,815 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 16:39:43,167 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 16:39:43,167 INFO client.py {'response': 200}
-2023-06-08 16:39:43,167 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 16:39:50,289 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686227990.2896633, 'account_name': 'Guest', 'mess_text': 'ghbdtn'}
-2023-06-08 16:41:02,186 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228062.1867845, 'account_name': 'Guest', 'mess_text': 'eee'}
-2023-06-08 16:41:03,807 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228063.807656, 'account_name': 'Guest', 'mess_text': 'wer'}
-2023-06-08 16:41:04,844 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228064.844623, 'account_name': 'Guest', 'mess_text': ' ewwe'}
-2023-06-08 16:41:05,911 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228065.911797, 'account_name': 'Guest', 'mess_text': 'werwerwer'}
-2023-06-08 16:41:06,320 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228066.320645, 'account_name': 'Guest', 'mess_text': 'werwe'}
-2023-06-08 16:41:07,823 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228067.82377, 'account_name': 'Guest', 'mess_text': 're'}
-2023-06-08 16:48:31,915 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 16:48:31,915 INFO client.py {'response': 200}
-2023-06-08 16:48:31,915 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 16:48:36,418 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228516.41837, 'account_name': 'Guest', 'mess_text': 'fdfds'}
-2023-06-08 16:48:36,418 ERROR client.py Соединение с сервером 127.0.0.1 было потеряно.
-2023-06-08 16:48:39,807 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 16:48:39,807 INFO client.py {'response': 200}
-2023-06-08 16:48:39,807 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 16:48:41,239 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228521.2395556, 'login': 'Guest', 'mess_text': 'dsdss'}
-2023-06-08 16:51:33,627 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 16:51:33,627 INFO client.py {'response': 200}
-2023-06-08 16:51:33,627 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 16:51:37,150 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228697.150365, 'login': 'Guest', 'mess_text': ''}
-2023-06-08 16:51:38,397 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228698.39724, 'login': 'Guest', 'mess_text': 's'}
-2023-06-08 16:51:38,397 ERROR client.py Соединение с сервером 127.0.0.1 было потеряно.
-2023-06-08 16:51:40,260 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 16:51:40,260 INFO client.py {'response': 200}
-2023-06-08 16:51:40,260 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 16:51:41,468 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228701.4683719, 'login': 'Guest', 'mess_text': 'ss'}
-2023-06-08 16:53:33,291 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 16:53:33,291 INFO client.py {'response': 200}
-2023-06-08 16:53:33,292 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 16:53:36,791 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228816.790978, 'login': 'Guest', 'mess_text': ''}
-2023-06-08 16:53:38,782 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228818.7828753, 'login': 'Guest', 'mess_text': 'dd'}
-2023-06-08 16:53:38,783 ERROR client.py Соединение с сервером 127.0.0.1 было потеряно.
-2023-06-08 16:53:40,794 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 16:53:40,794 INFO client.py {'response': 200}
-2023-06-08 16:53:40,794 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 16:53:42,750 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228822.749971, 'login': 'Guest', 'mess_text': 'dssd'}
-2023-06-08 16:56:02,015 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 16:56:02,015 INFO client.py {'response': 200}
-2023-06-08 16:56:02,015 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 16:56:05,228 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228965.2280748, 'login': 'Guest', 'mess_text': 's'}
-2023-06-08 16:56:07,273 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228967.2730436, 'login': 'Guest', 'mess_text': 'ss'}
-2023-06-08 16:56:07,273 ERROR client.py Соединение с сервером 127.0.0.1 было потеряно.
-2023-06-08 16:56:09,130 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 16:56:09,130 INFO client.py {'response': 200}
-2023-06-08 16:56:09,130 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 16:56:11,399 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686228971.3991923, 'login': 'Guest', 'mess_text': 's33'}
-2023-06-08 16:56:12,136 INFO client.py Получено сообщение от пользователя Guest:
-s33
-2023-06-08 16:56:53,703 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686229013.7037282, 'login': 'Guest', 'mess_text': '67'}
-2023-06-08 16:56:54,254 INFO client.py Получено сообщение от пользователя Guest:
-67
-2023-06-08 16:59:35,895 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686229175.8955348, 'login': 'Guest', 'mess_text': '88'}
-2023-06-08 16:59:36,743 INFO client.py Получено сообщение от пользователя Guest:
-88
-2023-06-08 17:08:39,986 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 17:08:39,986 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 17:08:45,582 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686229725.5829031, 'login': 'Guest', 'mess_text': '\x1b[As'}
-2023-06-08 17:08:46,571 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686229726.5718796, 'login': 'Guest', 'mess_text': ''}
-2023-06-08 17:08:46,572 ERROR client.py Соединение с сервером 127.0.0.1 было потеряно.
-2023-06-08 17:08:48,622 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 17:08:48,622 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 17:08:52,019 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686229732.019732, 'login': 'Guest', 'mess_text': '44556gv'}
-2023-06-08 17:08:52,642 INFO client.py Получено сообщение от пользователя Guest:
-44556gv
-2023-06-08 17:11:08,626 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 17:11:08,626 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 17:11:12,692 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686229872.692237, 'login': 'Guest', 'mess_text': 'ss\x1b[A'}
-2023-06-08 17:11:13,598 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686229873.5982242, 'login': 'Guest', 'mess_text': 'd'}
-2023-06-08 17:11:13,598 ERROR client.py Соединение с сервером 127.0.0.1 было потеряно.
-2023-06-08 17:11:15,348 DEBUG client.py получено сообщение от сервера: {'response': 200}
-2023-06-08 17:11:15,348 INFO client.py получен ответ сервера: 200 : OK
-2023-06-08 17:11:17,528 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1686229877.5283208, 'login': 'Guest', 'mess_text': '556787'}
-2023-06-08 17:11:18,354 INFO client.py Получено сообщение от пользователя Guest:
-556787
+2023-06-01 20:37:40,561 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 7777
+2023-06-01 20:37:40,563 INFO decorators.py  Функция create_presence() вызвана из функции main()
+2023-06-01 20:37:40,567 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-01 20:37:40,567 INFO decorators.py  Функция process_response() вызвана из функции main()
+2023-06-01 20:37:40,567 INFO client.py получен ответ сервера: 200 : OK
+2023-06-01 20:53:42,983 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 7777
+2023-06-01 20:53:42,986 INFO decorators.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-01 20:53:42,989 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-01 20:53:42,989 INFO decorators.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-01 20:53:42,989 INFO client.py получен ответ сервера: 200 : OK
+2023-06-08 12:59:16,245 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 7777
+2023-06-08 12:59:16,248 INFO client.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-08 12:59:16,251 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-08 12:59:16,251 INFO client.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-08 12:59:16,251 INFO client.py получен ответ сервера: 200 : OK
+2023-06-08 13:32:21,985 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 8076
+2023-06-08 13:32:21,988 INFO client.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-08 13:32:21,990 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 8076
+2023-06-08 13:32:21,992 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-08 13:32:21,992 INFO client.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-08 13:32:21,992 INFO client.py получен ответ сервера: 200 : OK
+2023-06-08 13:32:21,993 INFO client.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-08 13:32:21,993 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 8076
+2023-06-08 13:32:21,996 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 8076
+2023-06-08 13:32:21,996 INFO client.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-08 13:32:21,996 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-08 13:32:21,996 INFO client.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-08 13:32:21,997 INFO client.py получен ответ сервера: 200 : OK
+2023-06-08 13:32:21,999 INFO client.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-08 13:32:21,999 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-08 13:32:21,999 INFO client.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-08 13:32:21,999 INFO client.py получен ответ сервера: 200 : OK
+2023-06-08 13:32:22,000 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-08 13:32:22,000 INFO client.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-08 13:32:22,000 INFO client.py получен ответ сервера: 200 : OK
+2023-06-08 13:32:22,011 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 8076
+2023-06-08 13:32:22,014 INFO client.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-08 13:32:22,014 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-08 13:32:22,014 INFO client.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-08 13:32:22,014 INFO client.py получен ответ сервера: 200 : OK
+2023-06-08 14:24:00,849 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 8076
+2023-06-08 14:24:00,852 INFO client.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-08 14:24:00,852 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 46068), raddr=('127.0.0.1', 8076)>, {'action': 'presence', 'time': 1686219840.8500414, 'user': {'login': 'Guest'}}), {} из функции main()
+2023-06-08 14:24:00,855 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 46068), raddr=('127.0.0.1', 8076)>,), {} из функции main()
+2023-06-08 14:24:00,856 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-08 14:24:00,856 INFO client.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-08 14:24:00,856 INFO client.py получен ответ сервера: 200 : OK
+2023-06-08 14:24:00,857 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 8076
+2023-06-08 14:24:00,861 INFO client.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-08 14:24:00,862 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 46072), raddr=('127.0.0.1', 8076)>, {'action': 'presence', 'time': 1686219840.8580158, 'user': {'login': 'Guest'}}), {} из функции main()
+2023-06-08 14:24:00,862 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 46072), raddr=('127.0.0.1', 8076)>,), {} из функции main()
+2023-06-08 14:24:00,862 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-08 14:24:00,862 INFO client.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-08 14:24:00,862 INFO client.py получен ответ сервера: 200 : OK
+2023-06-08 14:24:00,872 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 8076
+2023-06-08 14:24:00,875 INFO client.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-08 14:24:00,875 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 46088), raddr=('127.0.0.1', 8076)>, {'action': 'presence', 'time': 1686219840.8730466, 'user': {'login': 'Guest'}}), {} из функции main()
+2023-06-08 14:24:00,876 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 46088), raddr=('127.0.0.1', 8076)>,), {} из функции main()
+2023-06-08 14:24:00,876 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-08 14:24:00,876 INFO client.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-08 14:24:00,876 INFO client.py получен ответ сервера: 200 : OK
+2023-06-08 14:24:00,878 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 8076
+2023-06-08 14:24:00,880 INFO client.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-08 14:24:00,881 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 46102), raddr=('127.0.0.1', 8076)>, {'action': 'presence', 'time': 1686219840.8785682, 'user': {'login': 'Guest'}}), {} из функции main()
+2023-06-08 14:24:00,881 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 46102), raddr=('127.0.0.1', 8076)>,), {} из функции main()
+2023-06-08 14:24:00,881 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-08 14:24:00,881 INFO client.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-08 14:24:00,881 INFO client.py получен ответ сервера: 200 : OK
+2023-06-08 14:24:00,886 INFO client.py запущен клиент с адресом: 127.0.0.1; порт: 8076
+2023-06-08 14:24:00,888 INFO client.py  Функция create_presence() вызвана c параметрами:(), {} из функции main()
+2023-06-08 14:24:00,889 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 46106), raddr=('127.0.0.1', 8076)>, {'action': 'presence', 'time': 1686219840.8862963, 'user': {'login': 'Guest'}}), {} из функции main()
+2023-06-08 14:24:00,889 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 46106), raddr=('127.0.0.1', 8076)>,), {} из функции main()
+2023-06-08 14:24:00,889 DEBUG client.py получено сообщение от сервера: {'response': 200, 'alert': 'OK'}
+2023-06-08 14:24:00,890 INFO client.py  Функция process_response() вызвана c параметрами:({'response': 200, 'alert': 'OK'},), {} из функции main()
+2023-06-08 14:24:00,890 INFO client.py получен ответ сервера: 200 : OK

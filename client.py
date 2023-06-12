@@ -8,8 +8,12 @@ from socket import *
 from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, \
     RESPONSE, ERROR, DEFAULT_IP_ADDRESS, DEFAULT_PORT, LOGIN, MESSAGE, MESSAGE_TEXT, SENDER
 from common.utils import get_message, send_message
+from common.decorators import log
 
 CLIENT_LOGGER = logging.getLogger('client')
+
+
+@log
 def create_presence(login='Guest'):
     message = {
         ACTION: PRESENCE,
@@ -21,6 +25,7 @@ def create_presence(login='Guest'):
     return message
 
 
+@log
 def process_response(data):
     CLIENT_LOGGER.debug(f'получено сообщение от сервера: {data}')
     if RESPONSE in data:
@@ -123,6 +128,7 @@ def main():
                 except (ConnectionResetError, ConnectionError, ConnectionAbortedError):
                     CLIENT_LOGGER.error(f"Соединение с сервером {server_address} было потеряно.")
                     sys.exit(1)
+
 
 
 if __name__ == "__main__":
