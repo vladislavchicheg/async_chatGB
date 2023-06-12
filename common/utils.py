@@ -19,7 +19,6 @@ def get_message(sock):
 
 @log
 def send_message(sock, message):
-
     js_message = json.dumps(message)
     encoded_message = js_message.encode(ENCODING)
     sock.send(encoded_message)

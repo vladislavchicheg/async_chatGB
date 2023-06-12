@@ -1,46 +1,84 @@
-2023-06-08 12:58:57,985 INFO server.py Запущен сервер - порт: 7777 ; адрес:
-2023-06-08 12:59:16,248 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1686214756.245897, 'user': {'login': 'Guest'}}
-2023-06-08 12:59:16,251 INFO server.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1686214756.245897, 'user': {'login': 'Guest'}},), {} из функции main()
-2023-06-08 12:59:16,251 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
-2023-06-08 13:32:21,979 INFO server.py Запущен сервер - порт: 8076 ; адрес:127.0.0.1
-2023-06-08 13:32:21,988 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1686216741.9860082, 'user': {'login': 'Guest'}}
-2023-06-08 13:32:21,992 INFO server.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1686216741.9860082, 'user': {'login': 'Guest'}},), {} из функции main()
-2023-06-08 13:32:21,992 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
-2023-06-08 13:32:21,994 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1686216741.9908392, 'user': {'login': 'Guest'}}
-2023-06-08 13:32:21,995 INFO server.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1686216741.9908392, 'user': {'login': 'Guest'}},), {} из функции main()
-2023-06-08 13:32:21,995 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
-2023-06-08 13:32:21,996 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1686216741.9940493, 'user': {'login': 'Guest'}}
-2023-06-08 13:32:21,996 INFO server.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1686216741.9940493, 'user': {'login': 'Guest'}},), {} из функции main()
-2023-06-08 13:32:21,996 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
-2023-06-08 13:32:21,999 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1686216741.996394, 'user': {'login': 'Guest'}}
-2023-06-08 13:32:21,999 INFO server.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1686216741.996394, 'user': {'login': 'Guest'}},), {} из функции main()
-2023-06-08 13:32:21,999 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
-2023-06-08 13:32:22,014 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1686216742.0119293, 'user': {'login': 'Guest'}}
-2023-06-08 13:32:22,014 INFO server.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1686216742.0119293, 'user': {'login': 'Guest'}},), {} из функции main()
-2023-06-08 13:32:22,014 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
-2023-06-08 14:24:00,847 INFO server.py Запущен сервер - порт: 8076 ; адрес:127.0.0.1
-2023-06-08 14:24:00,855 INFO server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8076), raddr=('127.0.0.1', 46068)>,), {} из функции main()
-2023-06-08 14:24:00,855 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1686219840.8500414, 'user': {'login': 'Guest'}}
-2023-06-08 14:24:00,855 INFO server.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1686219840.8500414, 'user': {'login': 'Guest'}},), {} из функции main()
-2023-06-08 14:24:00,855 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
-2023-06-08 14:24:00,855 INFO server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8076), raddr=('127.0.0.1', 46068)>, {'response': 200, 'alert': 'OK'}), {} из функции main()
-2023-06-08 14:24:00,862 INFO server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8076), raddr=('127.0.0.1', 46072)>,), {} из функции main()
-2023-06-08 14:24:00,862 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1686219840.8580158, 'user': {'login': 'Guest'}}
-2023-06-08 14:24:00,862 INFO server.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1686219840.8580158, 'user': {'login': 'Guest'}},), {} из функции main()
-2023-06-08 14:24:00,862 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
-2023-06-08 14:24:00,862 INFO server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8076), raddr=('127.0.0.1', 46072)>, {'response': 200, 'alert': 'OK'}), {} из функции main()
-2023-06-08 14:24:00,875 INFO server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8076), raddr=('127.0.0.1', 46088)>,), {} из функции main()
-2023-06-08 14:24:00,875 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1686219840.8730466, 'user': {'login': 'Guest'}}
-2023-06-08 14:24:00,875 INFO server.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1686219840.8730466, 'user': {'login': 'Guest'}},), {} из функции main()
-2023-06-08 14:24:00,875 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
-2023-06-08 14:24:00,875 INFO server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8076), raddr=('127.0.0.1', 46088)>, {'response': 200, 'alert': 'OK'}), {} из функции main()
-2023-06-08 14:24:00,881 INFO server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8076), raddr=('127.0.0.1', 46102)>,), {} из функции main()
-2023-06-08 14:24:00,881 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1686219840.8785682, 'user': {'login': 'Guest'}}
-2023-06-08 14:24:00,881 INFO server.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1686219840.8785682, 'user': {'login': 'Guest'}},), {} из функции main()
-2023-06-08 14:24:00,881 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
-2023-06-08 14:24:00,881 INFO server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8076), raddr=('127.0.0.1', 46102)>, {'response': 200, 'alert': 'OK'}), {} из функции main()
-2023-06-08 14:24:00,889 INFO server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8076), raddr=('127.0.0.1', 46106)>,), {} из функции main()
-2023-06-08 14:24:00,889 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1686219840.8862963, 'user': {'login': 'Guest'}}
-2023-06-08 14:24:00,889 INFO server.py  Функция process_client_message() вызвана c параметрами:({'action': 'presence', 'time': 1686219840.8862963, 'user': {'login': 'Guest'}},), {} из функции main()
-2023-06-08 14:24:00,889 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
-2023-06-08 14:24:00,889 INFO server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8076), raddr=('127.0.0.1', 46106)>, {'response': 200, 'alert': 'OK'}), {} из функции main()
+2023-06-01 00:06:54,360 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-01 00:07:19,418 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1685563639.4187255, 'user': {'login': 'Guest'}}
+2023-06-01 00:07:19,418 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
+2023-06-08 15:26:04,507 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:35:31,333 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:36:01,317 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:37:19,226 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:37:44,625 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:37:51,274 INFO server.py Установлено соедение - ('127.0.0.1', 34010)
+2023-06-08 15:37:51,274 INFO server.py Клиент ('127.0.0.1', 34010) отключился от сервера.
+2023-06-08 15:39:04,218 INFO server.py Установлено соедение - ('127.0.0.1', 47080)
+2023-06-08 15:39:04,219 INFO server.py Клиент ('127.0.0.1', 47080) отключился от сервера.
+2023-06-08 15:40:21,338 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:40:33,151 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:42:01,565 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:43:20,967 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:43:24,087 INFO server.py Установлено соедение - ('127.0.0.1', 38280)
+2023-06-08 15:43:24,087 INFO server.py Клиент ('127.0.0.1', 38280) отключился от сервера.
+2023-06-08 15:44:55,400 INFO server.py Установлено соедение - ('127.0.0.1', 56586)
+2023-06-08 15:44:55,400 INFO server.py Клиент ('127.0.0.1', 56586) отключился от сервера.
+2023-06-08 15:46:41,586 INFO server.py Установлено соедение - ('127.0.0.1', 60572)
+2023-06-08 15:46:41,587 INFO server.py Клиент ('127.0.0.1', 60572) отключился от сервера.
+2023-06-08 15:49:30,459 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:49:44,774 INFO server.py Установлено соедение - ('127.0.0.1', 55526)
+2023-06-08 15:49:44,774 INFO server.py Клиент ('127.0.0.1', 55526) отключился от сервера.
+2023-06-08 15:52:49,334 INFO server.py Установлено соедение - ('127.0.0.1', 35000)
+2023-06-08 15:52:49,335 INFO server.py Клиент ('127.0.0.1', 35000) отключился от сервера.
+2023-06-08 15:53:00,156 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:53:12,603 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:53:14,741 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:53:18,334 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:53:24,046 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:53:25,727 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:53:27,059 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:53:28,163 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:53:29,081 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:53:56,529 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:55:19,571 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:57:42,477 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 15:57:47,182 INFO server.py Установлено соедение - ('127.0.0.1', 56654)
+2023-06-08 15:57:47,182 INFO server.py Клиент ('127.0.0.1', 56654) отключился от сервера.
+2023-06-08 16:00:31,311 INFO server.py Установлено соедение - ('127.0.0.1', 51486)
+2023-06-08 16:00:31,311 INFO server.py Клиент ('127.0.0.1', 51486) отключился от сервера.
+2023-06-08 16:07:47,607 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 16:07:51,794 INFO server.py Установлено соедение - ('127.0.0.1', 49418)
+2023-06-08 16:07:51,794 INFO server.py Клиент ('127.0.0.1', 49418) отключился от сервера.
+2023-06-08 16:10:07,095 INFO server.py Установлено соедение - ('127.0.0.1', 42624)
+2023-06-08 16:10:07,095 INFO server.py Клиент ('127.0.0.1', 42624) отключился от сервера.
+2023-06-08 16:12:47,120 INFO server.py Установлено соедение - ('127.0.0.1', 40196)
+2023-06-08 16:12:47,121 INFO server.py Клиент ('127.0.0.1', 40196) отключился от сервера.
+2023-06-08 16:14:29,581 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 16:14:32,869 INFO server.py Установлено соедение - ('127.0.0.1', 45966)
+2023-06-08 16:14:32,870 INFO server.py <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 45966)>
+2023-06-08 16:14:32,870 INFO server.py Клиент ('127.0.0.1', 45966) отключился от сервера.
+2023-06-08 16:15:53,195 INFO server.py Установлено соедение - ('127.0.0.1', 37342)
+2023-06-08 16:15:53,196 INFO server.py <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 37342)>
+2023-06-08 16:15:53,196 INFO server.py Клиент ('127.0.0.1', 37342) отключился от сервера.
+2023-06-08 16:53:19,255 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 16:53:25,547 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 16:53:33,291 INFO server.py Установлено соедение - ('127.0.0.1', 59200)
+2023-06-08 16:53:33,291 INFO server.py <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 59200)>
+2023-06-08 16:53:40,794 INFO server.py Установлено соедение - ('127.0.0.1', 34132)
+2023-06-08 16:53:40,794 INFO server.py <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 34132)>
+2023-06-08 16:53:42,796 INFO server.py {'action': 'message', 'sender': 'Guest', 'time': datetime.time(0, 0), 'mess_text': 'dssd'}
+2023-06-08 16:53:42,796 INFO server.py Клиент ('127.0.0.1', 59200) отключился от сервера.
+2023-06-08 16:53:42,796 INFO server.py Клиент ('127.0.0.1', 34132) отключился от сервера.
+2023-06-08 16:55:58,898 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 16:56:02,015 INFO server.py Установлено соедение - ('127.0.0.1', 47438)
+2023-06-08 16:56:02,015 INFO server.py <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 47438)>
+2023-06-08 16:56:09,130 INFO server.py Установлено соедение - ('127.0.0.1', 44548)
+2023-06-08 16:56:09,130 INFO server.py <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 44548)>
+2023-06-08 16:56:12,136 INFO server.py {'action': 'message', 'sender': 'Guest', 'time': 1686228972.136263, 'mess_text': 's33'}
+2023-06-08 16:56:54,253 INFO server.py {'action': 'message', 'sender': 'Guest', 'time': 1686229014.2538564, 'mess_text': '67'}
+2023-06-08 16:59:36,743 INFO server.py {'action': 'message', 'sender': 'Guest', 'time': 1686229176.743178, 'mess_text': '88'}
+2023-06-08 17:08:36,116 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 17:08:39,986 INFO server.py Установлено соедение - ('127.0.0.1', 39408)
+2023-06-08 17:08:39,986 INFO server.py <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 39408)>
+2023-06-08 17:08:48,622 INFO server.py Установлено соедение - ('127.0.0.1', 42460)
+2023-06-08 17:08:48,622 INFO server.py <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 42460)>
+2023-06-08 17:09:29,986 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 17:10:21,625 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 17:11:04,417 INFO server.py Запущен сервер - порт: 7777 ; адрес:
+2023-06-08 17:11:08,626 INFO server.py Установлено соедение - ('127.0.0.1', 39208)
+2023-06-08 17:11:15,348 INFO server.py Установлено соедение - ('127.0.0.1', 39222)
