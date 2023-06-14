@@ -11,7 +11,7 @@ while True:
     elif ANSWER == 's':
         PROCESS.append(subprocess.Popen('python server.py -p 8076 -a 127.0.0.1', shell=True))
         for i in range(5):
-            PROCESS.append(subprocess.Popen('python3 client.py 127.0.0.1 8076', shell=True))
+            PROCESS.append(subprocess.Popen(f'python3 client.py 127.0.0.1 8076 -n test{i}', shell=True))
     elif ANSWER == 'x':
         while PROCESS:
             VICTIM = PROCESS.pop()
