@@ -35,3 +35,5 @@ LOGGING_LEVEL = logging.DEBUG
 MESSAGE = "message"
 MESSAGE_TEXT = "mess_text"
 SENDER = "sender"
+EXIT = "exit"
+DESTINATION = 'to'
