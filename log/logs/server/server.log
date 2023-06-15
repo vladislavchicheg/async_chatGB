@@ -41,3 +41,41 @@
 2023-06-14 17:20:06,991 INFO server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 58760)>,), {} из функции main()
 2023-06-14 17:20:06,991 CRITICAL server.py {'action': 'message', 'sender': 'test1', 'to': 'test3', 'time': 1686748806.3039186, 'mess_text': 'dd'}
 2023-06-14 17:20:06,991 INFO server.py Клиент ('127.0.0.1', 58760) отключился от сервера.
+2023-06-15 21:12:41,350 INFO server.py  Функция arg_parser() вызвана c параметрами:(), {} из функции main()
+2023-06-15 21:12:41,350 INFO server.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2023-06-15 21:13:47,733 INFO server.py Установлено соедение с ПК ('127.0.0.1', 33360)
+2023-06-15 21:13:47,734 INFO server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 33360)>,), {} из функции main_loop()
+2023-06-15 21:13:47,734 DEBUG server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1686849227.7338793, 'user': {'account_name': 'test1'}}
+2023-06-15 21:13:47,734 INFO server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 33360)>, {'response': 200}), {} из функции process_client_message()
+2023-06-15 21:13:56,446 INFO server.py Установлено соедение с ПК ('127.0.0.1', 37524)
+2023-06-15 21:13:56,447 INFO server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 37524)>,), {} из функции main_loop()
+2023-06-15 21:13:56,447 DEBUG server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1686849236.4468248, 'user': {'account_name': 'test2'}}
+2023-06-15 21:13:56,447 INFO server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 37524)>, {'response': 200}), {} из функции process_client_message()
+2023-06-15 21:14:02,259 INFO server.py Установлено соедение с ПК ('127.0.0.1', 37532)
+2023-06-15 21:14:02,760 INFO server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 37532)>,), {} из функции main_loop()
+2023-06-15 21:14:02,760 DEBUG server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1686849242.259866, 'user': {'account_name': 'test3'}}
+2023-06-15 21:14:02,760 INFO server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 37532)>, {'response': 200}), {} из функции process_client_message()
+2023-06-15 21:14:21,324 INFO server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 37532)>,), {} из функции main_loop()
+2023-06-15 21:14:21,324 DEBUG server.py Разбор сообщения от клиента : {'action': 'message', 'sender': 'test3', 'to': 'test1', 'time': 1686849261.0091567, 'mess_text': 'Hi, dude'}
+2023-06-15 21:14:21,324 INFO server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 33360)>, {'action': 'message', 'sender': 'test3', 'to': 'test1', 'time': 1686849261.0091567, 'mess_text': 'Hi, dude'}), {} из функции process_message()
+2023-06-15 21:14:21,324 INFO server.py Отправлено сообщение пользователю test1 от пользователя test3.
+2023-06-15 21:26:44,523 INFO server.py  Функция arg_parser() вызвана c параметрами:(), {} из функции main()
+2023-06-15 21:26:44,523 INFO server.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2023-06-15 21:48:56,155 INFO server.py  Функция arg_parser_server() вызвана c параметрами:(), {} из функции main()
+2023-06-15 21:48:56,155 INFO Server.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2023-06-15 21:49:00,784 INFO Server.py Установлено соедение с ПК ('127.0.0.1', 40886)
+2023-06-15 21:49:00,784 INFO Server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 40886)>,), {} из функции main_loop()
+2023-06-15 21:49:00,784 DEBUG Server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1686851340.7839844, 'user': {'account_name': 'test1'}}
+2023-06-15 21:49:00,784 INFO Server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 40886)>, {'response': 200}), {} из функции process_client_message()
+2023-06-15 21:49:05,339 INFO Server.py Установлено соедение с ПК ('127.0.0.1', 40890)
+2023-06-15 21:49:05,340 INFO Server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 40890)>,), {} из функции main_loop()
+2023-06-15 21:49:05,340 DEBUG Server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1686851345.3398194, 'user': {'account_name': 'test2'}}
+2023-06-15 21:49:05,340 INFO Server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 40890)>, {'response': 200}), {} из функции process_client_message()
+2023-06-15 21:49:09,751 INFO Server.py Установлено соедение с ПК ('127.0.0.1', 48074)
+2023-06-15 21:49:10,252 INFO Server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 48074)>,), {} из функции main_loop()
+2023-06-15 21:49:10,252 DEBUG Server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1686851349.7510672, 'user': {'account_name': 'test3'}}
+2023-06-15 21:49:10,252 INFO Server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 48074)>, {'response': 200}), {} из функции process_client_message()
+2023-06-15 21:49:21,321 INFO Server.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 48074)>,), {} из функции main_loop()
+2023-06-15 21:49:21,321 DEBUG Server.py Разбор сообщения от клиента : {'action': 'message', 'sender': 'test3', 'to': 'test1', 'time': 1686851361.1009312, 'mess_text': 'hi'}
+2023-06-15 21:49:21,321 INFO Server.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 40886)>, {'action': 'message', 'sender': 'test3', 'to': 'test1', 'time': 1686851361.1009312, 'mess_text': 'hi'}), {} из функции process_message()
+2023-06-15 21:49:21,321 INFO Server.py Отправлено сообщение пользователю test1 от пользователя test3.
