@@ -1,6 +1,6 @@
 import unittest
 
-from client import create_presence, process_response
+from client_old import create_presence, process_response
 from common.variables import TIME, ACTION, PRESENCE, USER, LOGIN, RESPONSE, ERROR
 
 

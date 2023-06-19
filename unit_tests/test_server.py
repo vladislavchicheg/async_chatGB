@@ -1,7 +1,7 @@
 import unittest
 
 from common.variables import ACTION, PRESENCE, TIME, USER, LOGIN, RESPONSE, ERROR, ALERT
-from server import process_client_message
+from server_old import process_client_message
 
 
 class ServerTestCase(unittest.TestCase):

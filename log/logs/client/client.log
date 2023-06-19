@@ -282,3 +282,78 @@
 2023-06-14 17:26:38,068 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'test1', 'to': 'test3', 'time': 1686749198.068803, 'mess_text': 'ee'}
 2023-06-14 17:26:38,069 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 58760), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'sender': 'test1', 'to': 'test3', 'time': 1686749198.068803, 'mess_text': 'ee'}), {} из функции create_message()
 2023-06-14 17:26:38,069 INFO client.py Отправлено сообщение для пользователя test3
+2023-06-15 21:13:47,733 INFO client.py  Функция arg_parser() вызвана c параметрами:(), {} из функции main()
+2023-06-15 21:13:47,733 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1
+2023-06-15 21:13:47,733 DEBUG client.py Сформировано presence сообщение для пользователя test1
+2023-06-15 21:13:47,734 INFO client.py  Функция create_presence() вызвана c параметрами:('test1',), {} из функции main()
+2023-06-15 21:13:47,734 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 33360), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1686849227.7338793, 'user': {'account_name': 'test1'}}), {} из функции main()
+2023-06-15 21:13:47,734 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 33360), raddr=('127.0.0.1', 7777)>,), {} из функции main()
+2023-06-15 21:13:47,734 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2023-06-15 21:13:47,734 INFO client.py  Функция process_response_ans() вызвана c параметрами:({'response': 200},), {} из функции main()
+2023-06-15 21:13:47,734 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2023-06-15 21:13:47,734 DEBUG client.py Запущены процессы
+2023-06-15 21:13:56,446 INFO client.py  Функция arg_parser() вызвана c параметрами:(), {} из функции main()
+2023-06-15 21:13:56,446 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test2
+2023-06-15 21:13:56,446 DEBUG client.py Сформировано presence сообщение для пользователя test2
+2023-06-15 21:13:56,446 INFO client.py  Функция create_presence() вызвана c параметрами:('test2',), {} из функции main()
+2023-06-15 21:13:56,447 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 37524), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1686849236.4468248, 'user': {'account_name': 'test2'}}), {} из функции main()
+2023-06-15 21:13:56,447 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 37524), raddr=('127.0.0.1', 7777)>,), {} из функции main()
+2023-06-15 21:13:56,447 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2023-06-15 21:13:56,447 INFO client.py  Функция process_response_ans() вызвана c параметрами:({'response': 200},), {} из функции main()
+2023-06-15 21:13:56,447 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2023-06-15 21:13:56,447 DEBUG client.py Запущены процессы
+2023-06-15 21:14:02,259 INFO client.py  Функция arg_parser() вызвана c параметрами:(), {} из функции main()
+2023-06-15 21:14:02,259 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test3
+2023-06-15 21:14:02,259 DEBUG client.py Сформировано presence сообщение для пользователя test3
+2023-06-15 21:14:02,259 INFO client.py  Функция create_presence() вызвана c параметрами:('test3',), {} из функции main()
+2023-06-15 21:14:02,260 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 37532), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1686849242.259866, 'user': {'account_name': 'test3'}}), {} из функции main()
+2023-06-15 21:14:02,760 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 37532), raddr=('127.0.0.1', 7777)>,), {} из функции main()
+2023-06-15 21:14:02,760 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2023-06-15 21:14:02,760 INFO client.py  Функция process_response_ans() вызвана c параметрами:({'response': 200},), {} из функции main()
+2023-06-15 21:14:02,760 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2023-06-15 21:14:02,761 DEBUG client.py Запущены процессы
+2023-06-15 21:14:21,009 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'test3', 'to': 'test1', 'time': 1686849261.0091567, 'mess_text': 'Hi, dude'}
+2023-06-15 21:14:21,011 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 37532), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'sender': 'test3', 'to': 'test1', 'time': 1686849261.0091567, 'mess_text': 'Hi, dude'}), {} из функции create_message()
+2023-06-15 21:14:21,011 INFO client.py Отправлено сообщение для пользователя test1
+2023-06-15 21:14:21,325 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 33360), raddr=('127.0.0.1', 7777)>,), {} из функции run()
+2023-06-15 21:14:21,325 INFO client.py Получено сообщение от пользователя test3:
+Hi, dude
+2023-06-15 21:25:02,848 CRITICAL client.py Потеряно соединение с сервером.
+2023-06-15 21:25:02,848 CRITICAL client.py Потеряно соединение с сервером.
+2023-06-15 21:25:02,848 CRITICAL client.py Потеряно соединение с сервером.
+2023-06-15 21:49:00,783 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-06-15 21:49:00,783 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1
+2023-06-15 21:49:00,783 DEBUG utils.py Сформировано presence сообщение для пользователя test1
+2023-06-15 21:49:00,784 INFO client.py  Функция create_presence() вызвана c параметрами:('test1',), {} из функции main()
+2023-06-15 21:49:00,784 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 40886), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1686851340.7839844, 'user': {'account_name': 'test1'}}), {} из функции main()
+2023-06-15 21:49:00,784 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 40886), raddr=('127.0.0.1', 7777)>,), {} из функции main()
+2023-06-15 21:49:00,784 DEBUG utils.py Разбор приветственного сообщения от сервера: {'response': 200}
+2023-06-15 21:49:00,784 INFO client.py  Функция process_response_ans() вызвана c параметрами:({'response': 200},), {} из функции main()
+2023-06-15 21:49:00,784 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2023-06-15 21:49:00,785 DEBUG client.py Запущены процессы
+2023-06-15 21:49:05,339 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-06-15 21:49:05,339 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test2
+2023-06-15 21:49:05,339 DEBUG utils.py Сформировано presence сообщение для пользователя test2
+2023-06-15 21:49:05,339 INFO client.py  Функция create_presence() вызвана c параметрами:('test2',), {} из функции main()
+2023-06-15 21:49:05,340 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 40890), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1686851345.3398194, 'user': {'account_name': 'test2'}}), {} из функции main()
+2023-06-15 21:49:05,340 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 40890), raddr=('127.0.0.1', 7777)>,), {} из функции main()
+2023-06-15 21:49:05,340 DEBUG utils.py Разбор приветственного сообщения от сервера: {'response': 200}
+2023-06-15 21:49:05,340 INFO client.py  Функция process_response_ans() вызвана c параметрами:({'response': 200},), {} из функции main()
+2023-06-15 21:49:05,340 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2023-06-15 21:49:05,340 DEBUG client.py Запущены процессы
+2023-06-15 21:49:09,750 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-06-15 21:49:09,750 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test3
+2023-06-15 21:49:09,751 DEBUG utils.py Сформировано presence сообщение для пользователя test3
+2023-06-15 21:49:09,751 INFO client.py  Функция create_presence() вызвана c параметрами:('test3',), {} из функции main()
+2023-06-15 21:49:09,751 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 48074), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1686851349.7510672, 'user': {'account_name': 'test3'}}), {} из функции main()
+2023-06-15 21:49:10,253 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 48074), raddr=('127.0.0.1', 7777)>,), {} из функции main()
+2023-06-15 21:49:10,253 DEBUG utils.py Разбор приветственного сообщения от сервера: {'response': 200}
+2023-06-15 21:49:10,253 INFO client.py  Функция process_response_ans() вызвана c параметрами:({'response': 200},), {} из функции main()
+2023-06-15 21:49:10,253 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2023-06-15 21:49:10,253 DEBUG client.py Запущены процессы
+2023-06-15 21:49:21,100 DEBUG ClientSender.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'test3', 'to': 'test1', 'time': 1686851361.1009312, 'mess_text': 'hi'}
+2023-06-15 21:49:21,101 INFO ClientSender.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 48074), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'sender': 'test3', 'to': 'test1', 'time': 1686851361.1009312, 'mess_text': 'hi'}), {} из функции create_message()
+2023-06-15 21:49:21,101 INFO ClientSender.py Отправлено сообщение для пользователя test1
+2023-06-15 21:49:21,321 INFO ClientReader.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 40886), raddr=('127.0.0.1', 7777)>,), {} из функции run()
+2023-06-15 21:49:21,321 INFO ClientReader.py Получено сообщение от пользователя test3:
+hi

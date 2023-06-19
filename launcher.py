@@ -9,9 +9,9 @@ while True:
     if ANSWER == 'q':
         break
     elif ANSWER == 's':
-        PROCESS.append(subprocess.Popen('python server.py -p 8076 -a 127.0.0.1', shell=True))
-        for i in range(5):
-            PROCESS.append(subprocess.Popen(f'python3 client.py 127.0.0.1 8076 -n test{i}', shell=True))
+        PROCESS.append(subprocess.Popen('python3 server.py', shell=True))
+        for i in range(3):
+            PROCESS.append(subprocess.Popen(f'python3 client.py -n test{i}', shell=True))
     elif ANSWER == 'x':
         while PROCESS:
             VICTIM = PROCESS.pop()
