@@ -42,3 +42,5 @@ RESPONSE_400 = {
             RESPONSE: 400,
             ERROR: None
         }
+DATA_BASES_PATH = 'data_bases'
+SERVER_DATABASE_NAME = "Server_db.sqlite"

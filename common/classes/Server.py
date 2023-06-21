@@ -1,5 +1,6 @@
 import logging
 
+from common.classes.ORM.ServerStorage import ServerStorage
 from common.utils import get_message, send_message
 from common.variables import ERROR, ACCOUNT_NAME, ACTION, EXIT, SENDER, MESSAGE_TEXT, TIME, DESTINATION, MESSAGE, \
     RESPONSE_400, RESPONSE_200, USER, PRESENCE
@@ -21,6 +22,7 @@ class Server(metaclass=ServerMaker):
         self.messages = []
         self.names = dict()
         self.logger = logging.getLogger('server')
+        self.db = ServerStorage()
 
     def init_socket(self):
         self.logger.info(
@@ -88,6 +90,8 @@ class Server(metaclass=ServerMaker):
         if ACTION in message and message[ACTION] == PRESENCE and TIME in message and USER in message:
             if message[USER][ACCOUNT_NAME] not in self.names.keys():
                 self.names[message[USER][ACCOUNT_NAME]] = client
+                client_ip, client_port = client.getpeername()
+                self.db.user_login(message[USER][ACCOUNT_NAME], client_ip, client_port)
                 send_message(client, RESPONSE_200)
             else:
                 response = RESPONSE_400
@@ -101,9 +105,11 @@ class Server(metaclass=ServerMaker):
             self.messages.append(message)
             return
         elif ACTION in message and message[ACTION] == EXIT and ACCOUNT_NAME in message:
-            self.clients.remove(self.names[ACCOUNT_NAME])
+            self.logger.info(f'Пользователь {message[ACCOUNT_NAME]} разлогинился')
+            self.db.user_logout(message[ACCOUNT_NAME])
+            self.clients.remove(self.names[message[ACCOUNT_NAME]])
             self.names[ACCOUNT_NAME].close()
-            del self.names[ACCOUNT_NAME]
+            del self.names[message[ACCOUNT_NAME]]
             return
         else:
             response = RESPONSE_400
