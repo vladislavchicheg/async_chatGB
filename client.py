@@ -5,7 +5,9 @@ import socket
 
 from common.classes.ClientReader import ClientReader
 from common.classes.ClientSender import ClientSender
-from common.utils import send_message, get_message, arg_parser_client, create_presence, process_response_ans
+from common.classes.ORM.ClientStorage import ClientDatabase
+from common.utils import send_message, get_message, arg_parser_client, create_presence, process_response_ans, \
+    database_load
 
 logger = logging.getLogger('client')
 
@@ -26,6 +28,7 @@ def main():
 
     try:
         transport = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        transport.settimeout(1)
         transport.connect((server_address, server_port))
         send_message(transport, create_presence(client_name))
         answer = process_response_ans(get_message(transport))
@@ -38,18 +41,24 @@ def main():
         logger.error(f"Возникла ошибка")
         exit(1)
     else:
-        module_reciver = ClientReader(client_name, transport)
-        module_reciver.daemon = True
-        module_reciver.start()
+        # Инициализация БД
+        database = ClientDatabase(client_name)
+        database_load(transport, database, client_name)
 
-        module_sender = ClientSender(client_name, transport)
+        # Если соединение с сервером установлено корректно, запускаем поток взаимодействия с пользователем
+        module_sender = ClientSender(client_name, transport, database)
         module_sender.daemon = True
         module_sender.start()
-        logger.debug("Запущены процессы")
+        logger.debug('Запущены процессы')
+
+        # затем запускаем поток - приёмник сообщений.
+        module_receiver = ClientReader(client_name, transport, database)
+        module_receiver.daemon = True
+        module_receiver.start()
 
         while True:
             time.sleep(1)
-            if module_reciver.is_alive() and module_sender.is_alive():
+            if module_receiver.is_alive() and module_sender.is_alive():
                 continue
             break
 

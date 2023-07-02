@@ -36,6 +36,11 @@ MESSAGE = "message"
 MESSAGE_TEXT = "mess_text"
 SENDER = "sender"
 EXIT = "exit"
+GET_CONTACTS = 'get_contacts'
+LIST_INFO = 'data_list'
+REMOVE_CONTACT = 'remove'
+ADD_CONTACT = 'add'
+USERS_REQUEST = 'get_users'
 DESTINATION = 'to'
 RESPONSE_200 = {RESPONSE: 200}
 RESPONSE_400 = {
@@ -44,3 +49,4 @@ RESPONSE_400 = {
         }
 DATA_BASES_PATH = 'data_bases'
 SERVER_DATABASE_NAME = "Server_db.sqlite"
+CLIENT_DATABASE_NAME = "Client_db"

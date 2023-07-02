@@ -31,9 +31,10 @@ class ServerStorage:
             self.ip = ip
             self.port = port
 
-    def __init__(self):
-        self.database_path = Path(__file__).resolve().parents[3].joinpath(DATA_BASES_PATH).joinpath(SERVER_DATABASE_NAME)
-        self.database_engine = create_engine(f'sqlite:///{self.database_path}', echo=False, pool_recycle=7200)
+    def __init__(self, path):
+        self.database_path = Path(__file__).resolve().parents[3]
+        self.database_engine = create_engine(f'sqlite:///{self.database_path}{path}', echo=False, pool_recycle=7200,
+                                             connect_args={'check_same_thread': False})
         self.metadata = MetaData()
         users_table = Table('Users', self.metadata,
                             Column('id', Integer, primary_key=True),

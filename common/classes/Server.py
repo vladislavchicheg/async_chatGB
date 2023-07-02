@@ -15,14 +15,14 @@ class Server(metaclass=ServerMaker):
     port = Port()
     addr = IpAddress()
 
-    def __init__(self, listen_address, listen_port):
+    def __init__(self, listen_address, listen_port, db):
         self.addr = listen_address
         self.port = listen_port
         self.clients = []
         self.messages = []
         self.names = dict()
         self.logger = logging.getLogger('server')
-        self.db = ServerStorage()
+        self.db = db
 
     def init_socket(self):
         self.logger.info(
@@ -74,6 +74,61 @@ class Server(metaclass=ServerMaker):
                     del self.names[message[DESTINATION]]
             self.messages.clear()
 
+    def run(self):
+        # Инициализация Сокета
+        self.init_socket()
+
+        # Основной цикл программы сервера
+        while True:
+            # Ждём подключения, если таймаут вышел, ловим исключение.
+            try:
+                client, client_address = self.sock.accept()
+            except OSError:
+                pass
+            else:
+                self.logger.info(f'Установлено соедение с ПК {client_address}')
+                self.clients.append(client)
+
+            recv_data_lst = []
+            send_data_lst = []
+            err_lst = []
+            # Проверяем на наличие ждущих клиентов
+            try:
+                if self.clients:
+                    recv_data_lst, send_data_lst, err_lst = select.select(
+                        self.clients, self.clients, [], 0)
+            except OSError as err:
+                self.logger.rror(f'Ошибка работы с сокетами: {err}')
+
+            # принимаем сообщения и если ошибка, исключаем клиента.
+            if recv_data_lst:
+                for client_with_message in recv_data_lst:
+                    try:
+                        self.process_client_message(
+                            get_message(client_with_message), client_with_message)
+                    except (OSError):
+                        # Ищем клиента в словаре клиентов и удаляем его из него
+                        # и  базы подключённых
+                        self.logger.info(
+                            f'Клиент {client_with_message.getpeername()} отключился от сервера.')
+                        for name in self.names:
+                            if self.names[name] == client_with_message:
+                                self.database.user_logout(name)
+                                del self.names[name]
+                                break
+                        self.clients.remove(client_with_message)
+
+            # Если есть сообщения, обрабатываем каждое.
+            for message in self.messages:
+                try:
+                    self.process_message(message, send_data_lst)
+                except (ConnectionAbortedError, ConnectionError, ConnectionResetError, ConnectionRefusedError):
+                    self.logger.info(
+                        f'Связь с клиентом с именем {message[DESTINATION]} была потеряна')
+                    self.clients.remove(self.names[message[DESTINATION]])
+                    self.database.user_logout(message[DESTINATION])
+                    del self.names[message[DESTINATION]]
+            self.messages.clear()
     def process_message(self, message, listen_socks):
         if message[DESTINATION] in self.names and self.names[message[DESTINATION]] in listen_socks:
             send_message(self.names[message[DESTINATION]], message)
