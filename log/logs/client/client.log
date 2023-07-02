@@ -627,3 +627,400 @@ hi, vasya
 2023-06-25 13:23:46,219 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
 2023-06-25 13:23:46,220 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test2
 2023-06-25 13:23:46,220 ERROR client.py Возникла ошибка
+2023-07-02 13:14:48,742 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 13:14:53,175 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: petya
+2023-07-02 13:14:54,182 ERROR client.py Возникла ошибка
+2023-07-02 13:16:21,236 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 13:16:22,674 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: 77
+2023-07-02 13:16:23,674 ERROR client.py Возникла ошибка
+2023-07-02 13:18:34,318 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 13:18:37,498 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: petya
+2023-07-02 13:18:37,499 DEBUG utils.py Сформировано presence сообщение для пользователя petya
+2023-07-02 13:18:37,500 INFO client.py  Функция create_presence() вызвана c параметрами:('petya',), {} из функции main()
+2023-07-02 13:18:37,501 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53351), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688285917.499801, 'user': {'account_name': 'petya'}}), {} из функции main()
+2023-07-02 13:18:38,192 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53351), raddr=('127.0.0.1', 7777)>,), {} из функции main()
+2023-07-02 13:18:38,192 DEBUG utils.py Разбор приветственного сообщения от сервера: {'response': 200}
+2023-07-02 13:18:38,192 INFO client.py  Функция process_response_ans() вызвана c параметрами:({'response': 200},), {} из функции main()
+2023-07-02 13:18:38,192 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2023-07-02 13:18:38,544 DEBUG utils.py Запрос списка известных пользователей petya
+2023-07-02 13:18:38,546 INFO utils.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53351), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688285918.5448196, 'account_name': 'petya'}), {} из функции user_list_request()
+2023-07-02 13:18:38,695 INFO utils.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53351), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_request()
+2023-07-02 13:18:38,695 ERROR utils.py Ошибка запроса списка известных пользователей.
+2023-07-02 13:18:38,695 DEBUG utils.py Запрос контакт листа для пользователся petya
+2023-07-02 13:18:38,695 DEBUG utils.py Сформирован запрос {'action': 'get_contacts', 'time': 1688285918.695786, 'user': 'petya'}
+2023-07-02 13:18:38,697 INFO utils.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53351), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688285918.695786, 'user': 'petya'}), {} из функции contacts_list_request()
+2023-07-02 13:18:39,200 INFO utils.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53351), raddr=('127.0.0.1', 7777)>,), {} из функции contacts_list_request()
+2023-07-02 13:18:39,200 DEBUG utils.py Получен ответ {'response': 400, 'error': 'Запрос некорректен.'}
+2023-07-02 13:20:35,665 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 13:20:39,743 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: vasya
+2023-07-02 13:20:39,744 DEBUG utils.py Сформировано presence сообщение для пользователя vasya
+2023-07-02 13:20:39,745 INFO client.py  Функция create_presence() вызвана c параметрами:('vasya',), {} из функции main()
+2023-07-02 13:20:39,746 INFO client.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=620, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53385), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688286039.7440555, 'user': {'account_name': 'vasya'}}), {} из функции main()
+2023-07-02 13:20:40,428 INFO client.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=620, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53385), raddr=('127.0.0.1', 7777)>,), {} из функции main()
+2023-07-02 13:20:40,428 DEBUG utils.py Разбор приветственного сообщения от сервера: {'response': 200}
+2023-07-02 13:20:40,429 INFO client.py  Функция process_response_ans() вызвана c параметрами:({'response': 200},), {} из функции main()
+2023-07-02 13:20:40,429 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2023-07-02 13:20:40,806 DEBUG utils.py Запрос списка известных пользователей vasya
+2023-07-02 13:20:40,808 INFO utils.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=620, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53385), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688286040.8066535, 'account_name': 'vasya'}), {} из функции user_list_request()
+2023-07-02 13:20:40,932 INFO utils.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=620, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53385), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_request()
+2023-07-02 13:20:40,932 ERROR utils.py Ошибка запроса списка известных пользователей.
+2023-07-02 13:20:40,932 DEBUG utils.py Запрос контакт листа для пользователся vasya
+2023-07-02 13:20:40,933 DEBUG utils.py Сформирован запрос {'action': 'get_contacts', 'time': 1688286040.933281, 'user': 'vasya'}
+2023-07-02 13:20:40,934 INFO utils.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=620, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53385), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688286040.933281, 'user': 'vasya'}), {} из функции contacts_list_request()
+2023-07-02 13:20:41,435 INFO utils.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=620, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53385), raddr=('127.0.0.1', 7777)>,), {} из функции contacts_list_request()
+2023-07-02 13:20:41,436 DEBUG utils.py Получен ответ {'response': 400, 'error': 'Запрос некорректен.'}
+2023-07-02 13:31:44,880 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 13:31:54,511 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: vasya
+2023-07-02 13:31:54,640 INFO transport.py Попытка подключения №1
+2023-07-02 13:31:54,640 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 13:31:54,641 DEBUG transport.py Сформировано presence сообщение для пользователя vasya
+2023-07-02 13:31:54,642 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1032, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53672), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688286714.6412435, 'user': {'account_name': 'vasya'}}), {} из функции connection_init()
+2023-07-02 13:31:54,740 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1032, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53672), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 13:31:54,740 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 13:31:54,740 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 13:31:54,740 DEBUG transport.py Запрос списка известных пользователей vasya
+2023-07-02 13:31:54,741 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1032, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53672), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688286714.7400773, 'account_name': 'vasya'}), {} из функции user_list_update()
+2023-07-02 13:31:55,243 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1032, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53672), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 13:31:55,243 ERROR transport.py Не удалось обновить список известных пользователей.
+2023-07-02 13:31:55,244 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 13:31:55,244 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688286715.2442594, 'user': 'vasya'}
+2023-07-02 13:31:55,245 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1032, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53672), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688286715.2442594, 'user': 'vasya'}), {} из функции contacts_list_update()
+2023-07-02 13:31:55,747 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1032, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53672), raddr=('127.0.0.1', 7777)>,), {} из функции contacts_list_update()
+2023-07-02 13:31:55,747 DEBUG transport.py Получен ответ {'response': 400, 'error': 'Запрос некорректен.'}
+2023-07-02 13:31:55,747 ERROR transport.py Не удалось обновить список контактов.
+2023-07-02 13:31:55,747 DEBUG transport.py Запущен процесс - приёмник собщений с сервера.
+2023-07-02 13:34:08,886 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 13:34:12,783 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: Lesha
+2023-07-02 13:34:13,122 INFO transport.py Попытка подключения №1
+2023-07-02 13:34:16,123 INFO transport.py Попытка подключения №2
+2023-07-02 13:34:19,124 INFO transport.py Попытка подключения №3
+2023-07-02 13:34:22,125 INFO transport.py Попытка подключения №4
+2023-07-02 13:34:25,126 INFO transport.py Попытка подключения №5
+2023-07-02 13:34:25,127 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 13:34:25,127 DEBUG transport.py Сформировано presence сообщение для пользователя Lesha
+2023-07-02 13:34:25,129 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1172, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53761), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688286865.1273193, 'user': {'account_name': 'Lesha'}}), {} из функции connection_init()
+2023-07-02 13:34:25,342 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1172, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53761), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 13:34:25,342 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 13:34:25,342 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 13:34:25,343 DEBUG transport.py Запрос списка известных пользователей Lesha
+2023-07-02 13:34:25,344 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1172, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53761), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688286865.3433776, 'account_name': 'Lesha'}), {} из функции user_list_update()
+2023-07-02 13:34:25,846 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1172, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53761), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 13:34:25,846 ERROR transport.py Не удалось обновить список известных пользователей.
+2023-07-02 13:34:25,847 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 13:34:25,847 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688286865.8470256, 'user': 'Lesha'}
+2023-07-02 13:34:25,848 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1172, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53761), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688286865.8470256, 'user': 'Lesha'}), {} из функции contacts_list_update()
+2023-07-02 13:34:26,350 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1172, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53761), raddr=('127.0.0.1', 7777)>,), {} из функции contacts_list_update()
+2023-07-02 13:34:26,350 DEBUG transport.py Получен ответ {'response': 400, 'error': 'Запрос некорректен.'}
+2023-07-02 13:34:26,350 ERROR transport.py Не удалось обновить список контактов.
+2023-07-02 13:34:26,351 DEBUG transport.py Запущен процесс - приёмник собщений с сервера.
+2023-07-02 13:43:37,209 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 13:43:45,036 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1
+2023-07-02 13:43:45,489 INFO transport.py Попытка подключения №1
+2023-07-02 13:43:48,491 INFO transport.py Попытка подключения №2
+2023-07-02 13:43:51,493 INFO transport.py Попытка подключения №3
+2023-07-02 13:43:54,495 INFO transport.py Попытка подключения №4
+2023-07-02 13:43:57,496 INFO transport.py Попытка подключения №5
+2023-07-02 13:44:00,498 CRITICAL transport.py Не удалось установить соединение с сервером
+2023-07-02 13:46:55,178 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 13:46:59,058 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1
+2023-07-02 13:46:59,180 INFO transport.py Попытка подключения №1
+2023-07-02 13:47:02,222 INFO transport.py Попытка подключения №2
+2023-07-02 13:47:05,270 INFO transport.py Попытка подключения №3
+2023-07-02 13:47:08,289 INFO transport.py Попытка подключения №4
+2023-07-02 13:47:11,329 INFO transport.py Попытка подключения №5
+2023-07-02 13:47:14,358 CRITICAL transport.py Не удалось установить соединение с сервером
+2023-07-02 13:47:38,921 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 13:47:42,719 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1
+2023-07-02 13:47:42,836 INFO transport.py Попытка подключения №1
+2023-07-02 13:47:42,837 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 13:47:42,837 DEBUG transport.py Сформировано presence сообщение для пользователя test1
+2023-07-02 13:47:42,838 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53900), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688287662.8377788, 'user': {'account_name': 'test1'}}), {} из функции connection_init()
+2023-07-02 13:47:43,040 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53900), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 13:47:43,040 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 13:47:43,040 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 13:47:43,040 DEBUG transport.py Запрос списка известных пользователей test1
+2023-07-02 13:47:43,042 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53900), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688287663.0408888, 'account_name': 'test1'}), {} из функции user_list_update()
+2023-07-02 13:47:43,547 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53900), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 13:47:43,547 ERROR transport.py Не удалось обновить список известных пользователей.
+2023-07-02 13:47:43,547 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 13:47:43,547 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688287663.547677, 'user': 'test1'}
+2023-07-02 13:47:43,549 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53900), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688287663.547677, 'user': 'test1'}), {} из функции contacts_list_update()
+2023-07-02 13:47:44,056 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53900), raddr=('127.0.0.1', 7777)>,), {} из функции contacts_list_update()
+2023-07-02 13:47:44,056 DEBUG transport.py Получен ответ {'response': 400, 'error': 'Запрос некорректен.'}
+2023-07-02 13:47:44,056 ERROR transport.py Не удалось обновить список контактов.
+2023-07-02 13:47:44,057 DEBUG transport.py Запущен процесс - приёмник собщений с сервера.
+2023-07-02 13:51:23,664 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 13:51:29,291 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1
+2023-07-02 13:51:29,419 INFO transport.py Попытка подключения №1
+2023-07-02 13:51:29,420 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 13:51:29,420 DEBUG transport.py Сформировано presence сообщение для пользователя test1
+2023-07-02 13:51:29,422 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53937), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688287889.4200308, 'user': {'account_name': 'test1'}}), {} из функции connection_init()
+2023-07-02 13:51:29,506 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53937), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 13:51:29,507 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 13:51:29,507 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 13:51:29,507 DEBUG transport.py Запрос списка известных пользователей test1
+2023-07-02 13:51:29,508 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53937), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688287889.507507, 'account_name': 'test1'}), {} из функции user_list_update()
+2023-07-02 13:51:30,012 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53937), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 13:51:30,012 ERROR transport.py Не удалось обновить список известных пользователей.
+2023-07-02 13:51:30,012 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 13:51:30,012 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688287890.0128698, 'user': 'test1'}
+2023-07-02 13:51:30,014 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53937), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688287890.0128698, 'user': 'test1'}), {} из функции contacts_list_update()
+2023-07-02 13:51:30,520 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53937), raddr=('127.0.0.1', 7777)>,), {} из функции contacts_list_update()
+2023-07-02 13:51:30,520 DEBUG transport.py Получен ответ {'response': 400, 'error': 'Запрос некорректен.'}
+2023-07-02 13:51:30,520 ERROR transport.py Не удалось обновить список контактов.
+2023-07-02 13:51:30,520 DEBUG transport.py Запущен процесс - приёмник собщений с сервера.
+2023-07-02 13:57:29,106 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 13:57:32,341 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1
+2023-07-02 13:57:32,542 INFO transport.py Попытка подключения №1
+2023-07-02 13:57:32,542 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 13:57:32,543 DEBUG transport.py Сформировано presence сообщение для пользователя test1
+2023-07-02 13:57:32,550 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1344, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53997), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688288252.5422602, 'user': {'account_name': 'test1'}}), {} из функции connection_init()
+2023-07-02 13:57:32,640 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1344, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53997), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 13:57:32,640 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 13:57:32,640 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 13:57:32,640 DEBUG transport.py Запрос списка известных пользователей test1
+2023-07-02 13:57:32,642 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1344, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53997), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688288252.6409419, 'account_name': 'test1'}), {} из функции user_list_update()
+2023-07-02 13:57:33,158 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1344, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53997), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 13:57:33,158 ERROR transport.py Не удалось обновить список известных пользователей.
+2023-07-02 13:57:33,158 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 13:57:33,159 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688288253.1593454, 'user': 'test1'}
+2023-07-02 13:57:33,160 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1344, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53997), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688288253.1593454, 'user': 'test1'}), {} из функции contacts_list_update()
+2023-07-02 13:57:33,665 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1344, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53997), raddr=('127.0.0.1', 7777)>,), {} из функции contacts_list_update()
+2023-07-02 13:57:33,665 DEBUG transport.py Получен ответ {'response': 400, 'error': 'Запрос некорректен.'}
+2023-07-02 13:57:33,665 ERROR transport.py Не удалось обновить список контактов.
+2023-07-02 13:57:33,666 DEBUG transport.py Запущен процесс - приёмник собщений с сервера.
+2023-07-02 13:57:40,190 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1344, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 53997), raddr=('127.0.0.1', 7777)>, {'action': 'exit', 'time': 1688288260.189425, 'account_name': 'test1'}), {} из функции transport_shutdown()
+2023-07-02 13:57:40,190 DEBUG transport.py Транспорт завершает работу.
+2023-07-02 13:57:40,749 DEBUG transport.py Потеряно соединение с сервером.
+2023-07-02 14:00:14,957 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 14:00:22,931 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1
+2023-07-02 14:00:23,046 INFO transport.py Попытка подключения №1
+2023-07-02 14:00:23,046 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 14:00:23,046 DEBUG transport.py Сформировано presence сообщение для пользователя test1
+2023-07-02 14:00:23,048 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54015), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688288423.046683, 'user': {'account_name': 'test1'}}), {} из функции connection_init()
+2023-07-02 14:00:23,157 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54015), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 14:00:23,157 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:00:23,157 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 14:00:23,157 DEBUG transport.py Запрос списка известных пользователей test1
+2023-07-02 14:00:23,158 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54015), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688288423.157472, 'account_name': 'test1'}), {} из функции user_list_update()
+2023-07-02 14:00:23,671 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54015), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 14:00:23,672 ERROR transport.py Не удалось обновить список известных пользователей.
+2023-07-02 14:00:23,672 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 14:00:23,672 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688288423.672715, 'user': 'test1'}
+2023-07-02 14:00:23,673 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54015), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688288423.672715, 'user': 'test1'}), {} из функции contacts_list_update()
+2023-07-02 14:00:24,178 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54015), raddr=('127.0.0.1', 7777)>,), {} из функции contacts_list_update()
+2023-07-02 14:00:24,179 DEBUG transport.py Получен ответ {'response': 400, 'error': 'Запрос некорректен.'}
+2023-07-02 14:00:24,179 ERROR transport.py Не удалось обновить список контактов.
+2023-07-02 14:00:24,179 DEBUG transport.py Запущен процесс - приёмник собщений с сервера.
+2023-07-02 14:00:31,764 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54015), raddr=('127.0.0.1', 7777)>, {'action': 'exit', 'time': 1688288431.6292775, 'account_name': 'test1'}), {} из функции transport_shutdown()
+2023-07-02 14:00:31,764 DEBUG transport.py Транспорт завершает работу.
+2023-07-02 14:00:47,714 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 14:00:50,865 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test88
+2023-07-02 14:00:51,295 INFO transport.py Попытка подключения №1
+2023-07-02 14:00:51,296 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 14:00:51,296 DEBUG transport.py Сформировано presence сообщение для пользователя test88
+2023-07-02 14:00:51,298 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54019), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688288451.2962055, 'user': {'account_name': 'test88'}}), {} из функции connection_init()
+2023-07-02 14:00:51,472 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54019), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 14:00:51,473 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:00:51,473 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 14:00:51,473 DEBUG transport.py Запрос списка известных пользователей test88
+2023-07-02 14:00:51,475 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54019), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688288451.4732468, 'account_name': 'test88'}), {} из функции user_list_update()
+2023-07-02 14:00:51,984 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54019), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 14:00:51,984 ERROR transport.py Не удалось обновить список известных пользователей.
+2023-07-02 14:00:51,984 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 14:00:51,984 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688288451.9848075, 'user': 'test88'}
+2023-07-02 14:00:51,985 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54019), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688288451.9848075, 'user': 'test88'}), {} из функции contacts_list_update()
+2023-07-02 14:00:52,502 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54019), raddr=('127.0.0.1', 7777)>,), {} из функции contacts_list_update()
+2023-07-02 14:00:52,502 DEBUG transport.py Получен ответ {'response': 400, 'error': 'Запрос некорректен.'}
+2023-07-02 14:00:52,502 ERROR transport.py Не удалось обновить список контактов.
+2023-07-02 14:00:52,503 DEBUG transport.py Запущен процесс - приёмник собщений с сервера.
+2023-07-02 14:01:00,324 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1300, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54019), raddr=('127.0.0.1', 7777)>, {'action': 'exit', 'time': 1688288460.323032, 'account_name': 'test88'}), {} из функции transport_shutdown()
+2023-07-02 14:01:00,325 DEBUG transport.py Транспорт завершает работу.
+2023-07-02 14:01:01,100 DEBUG transport.py Потеряно соединение с сервером.
+2023-07-02 14:05:44,167 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 14:05:49,496 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test14
+2023-07-02 14:05:49,883 INFO transport.py Попытка подключения №1
+2023-07-02 14:05:49,884 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 14:05:49,884 DEBUG transport.py Сформировано presence сообщение для пользователя test14
+2023-07-02 14:05:49,886 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1308, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54063), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688288749.8844347, 'user': {'account_name': 'test14'}}), {} из функции connection_init()
+2023-07-02 14:05:50,084 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1308, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54063), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 14:05:50,084 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:05:50,084 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 14:05:50,084 DEBUG transport.py Запрос списка известных пользователей test14
+2023-07-02 14:05:50,086 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1308, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54063), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688288750.0844648, 'account_name': 'test14'}), {} из функции user_list_update()
+2023-07-02 14:05:50,598 CRITICAL transport.py Потеряно соединение с сервером.
+2023-07-02 14:07:04,452 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 14:07:06,234 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: 11
+2023-07-02 14:07:06,602 INFO transport.py Попытка подключения №1
+2023-07-02 14:07:06,602 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 14:07:06,602 DEBUG transport.py Сформировано presence сообщение для пользователя 11
+2023-07-02 14:07:06,605 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1320, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54075), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688288826.6020224, 'user': {'account_name': '11'}}), {} из функции connection_init()
+2023-07-02 14:07:06,816 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1320, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54075), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 14:07:06,816 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:07:06,816 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 14:07:06,816 DEBUG transport.py Запрос списка известных пользователей 11
+2023-07-02 14:07:06,817 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1320, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54075), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688288826.8160834, 'account_name': '11'}), {} из функции user_list_update()
+2023-07-02 14:07:07,333 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1320, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54075), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 14:07:07,415 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 14:07:07,415 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688288827.4158835, 'user': '11'}
+2023-07-02 14:07:07,417 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1320, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54075), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688288827.4158835, 'user': '11'}), {} из функции contacts_list_update()
+2023-07-02 14:07:07,845 CRITICAL transport.py Потеряно соединение с сервером.
+2023-07-02 14:11:59,109 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 14:12:02,859 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test43
+2023-07-02 14:12:03,275 INFO transport.py Попытка подключения №1
+2023-07-02 14:12:03,275 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 14:12:03,275 DEBUG transport.py Сформировано presence сообщение для пользователя test43
+2023-07-02 14:12:03,277 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=828, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54114), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688289123.2752025, 'user': {'account_name': 'test43'}}), {} из функции connection_init()
+2023-07-02 14:12:03,478 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=828, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54114), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 14:12:03,478 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:12:03,478 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 14:12:03,478 DEBUG transport.py Запрос списка известных пользователей test43
+2023-07-02 14:12:03,480 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=828, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54114), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688289123.4782476, 'account_name': 'test43'}), {} из функции user_list_update()
+2023-07-02 14:12:03,997 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=828, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54114), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 14:12:04,090 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 14:12:04,090 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688289124.0904353, 'user': 'test43'}
+2023-07-02 14:12:04,091 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=828, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54114), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688289124.0904353, 'user': 'test43'}), {} из функции contacts_list_update()
+2023-07-02 14:12:04,520 CRITICAL transport.py Потеряно соединение с сервером.
+2023-07-02 14:13:07,523 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 14:13:12,045 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test32
+2023-07-02 14:13:12,461 INFO transport.py Попытка подключения №1
+2023-07-02 14:13:12,461 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 14:13:12,461 DEBUG transport.py Сформировано presence сообщение для пользователя test32
+2023-07-02 14:13:12,463 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1308, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54125), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688289192.4615014, 'user': {'account_name': 'test32'}}), {} из функции connection_init()
+2023-07-02 14:13:12,675 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1308, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54125), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 14:13:12,675 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:13:12,675 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 14:13:12,675 DEBUG transport.py Запрос списка известных пользователей test32
+2023-07-02 14:13:12,676 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1308, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54125), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688289192.675489, 'account_name': 'test32'}), {} из функции user_list_update()
+2023-07-02 14:13:13,192 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1308, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54125), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 14:13:13,279 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 14:13:13,279 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688289193.2793431, 'user': 'test32'}
+2023-07-02 14:13:13,281 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1308, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54125), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688289193.2793431, 'user': 'test32'}), {} из функции contacts_list_update()
+2023-07-02 14:13:13,704 CRITICAL transport.py Потеряно соединение с сервером.
+2023-07-02 14:14:56,505 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 14:15:02,816 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test78
+2023-07-02 14:15:03,200 INFO transport.py Попытка подключения №1
+2023-07-02 14:15:03,201 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 14:15:03,201 DEBUG transport.py Сформировано presence сообщение для пользователя test78
+2023-07-02 14:15:03,203 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1352, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54143), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688289303.2011244, 'user': {'account_name': 'test78'}}), {} из функции connection_init()
+2023-07-02 14:15:03,375 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1352, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54143), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 14:15:03,376 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:15:03,376 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 14:15:03,376 DEBUG transport.py Запрос списка известных пользователей test78
+2023-07-02 14:15:03,377 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1352, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54143), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688289303.3767805, 'account_name': 'test78'}), {} из функции user_list_update()
+2023-07-02 14:15:03,894 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1352, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54143), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 14:15:03,967 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 14:15:03,967 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688289303.9671838, 'user': 'test78'}
+2023-07-02 14:15:03,968 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1352, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54143), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688289303.9671838, 'user': 'test78'}), {} из функции contacts_list_update()
+2023-07-02 14:15:04,409 CRITICAL transport.py Потеряно соединение с сервером.
+2023-07-02 14:17:07,580 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 14:17:12,241 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: trewt766
+2023-07-02 14:17:12,625 INFO transport.py Попытка подключения №1
+2023-07-02 14:17:12,625 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 14:17:12,625 DEBUG transport.py Сформировано presence сообщение для пользователя trewt766
+2023-07-02 14:17:12,627 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1232, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54168), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688289432.6259308, 'user': {'account_name': 'trewt766'}}), {} из функции connection_init()
+2023-07-02 14:17:12,795 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1232, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54168), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 14:17:12,795 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:17:12,795 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 14:17:12,795 DEBUG transport.py Запрос списка известных пользователей trewt766
+2023-07-02 14:17:12,797 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1232, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54168), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688289432.7969694, 'account_name': 'trewt766'}), {} из функции user_list_update()
+2023-07-02 14:17:13,317 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1232, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54168), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 14:17:13,401 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 14:17:13,401 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688289433.4011402, 'user': 'trewt766'}
+2023-07-02 14:17:13,403 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1232, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54168), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688289433.4011402, 'user': 'trewt766'}), {} из функции contacts_list_update()
+2023-07-02 14:17:13,840 CRITICAL transport.py Потеряно соединение с сервером.
+2023-07-02 14:18:48,212 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 14:18:52,775 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: yrt6
+2023-07-02 14:18:53,206 INFO transport.py Попытка подключения №1
+2023-07-02 14:18:53,207 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 14:18:53,207 DEBUG transport.py Сформировано presence сообщение для пользователя yrt6
+2023-07-02 14:18:53,209 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688289533.2072842, 'user': {'account_name': 'yrt6'}}), {} из функции connection_init()
+2023-07-02 14:18:53,390 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 14:18:53,390 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:18:53,390 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 14:18:53,390 DEBUG transport.py Запрос списка известных пользователей yrt6
+2023-07-02 14:18:53,392 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688289533.390719, 'account_name': 'yrt6'}), {} из функции user_list_update()
+2023-07-02 14:18:53,909 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 14:18:54,013 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 14:18:54,013 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688289534.0134523, 'user': 'yrt6'}
+2023-07-02 14:18:54,015 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688289534.0134523, 'user': 'yrt6'}), {} из функции contacts_list_update()
+2023-07-02 14:18:54,414 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>,), {} из функции contacts_list_update()
+2023-07-02 14:18:54,415 DEBUG transport.py Получен ответ {'response': 202, 'data_list': []}
+2023-07-02 14:18:54,415 DEBUG transport.py Запущен процесс - приёмник собщений с сервера.
+2023-07-02 14:19:02,229 DEBUG transport.py Создание контакта trewt766
+2023-07-02 14:19:02,231 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>, {'action': 'add', 'time': 1688289542.2298217, 'user': 'yrt6', 'account_name': 'trewt766'}), {} из функции add_contact()
+2023-07-02 14:19:02,615 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>,), {} из функции add_contact()
+2023-07-02 14:19:02,615 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:19:02,741 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x00000262484BAEF0>
+2023-07-02 14:19:11,728 DEBUG transport.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'yrt6', 'to': 'trewt766', 'time': 1688289551.728444, 'mess_text': 'gfhgffg'}
+2023-07-02 14:19:11,729 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'sender': 'yrt6', 'to': 'trewt766', 'time': 1688289551.728444, 'mess_text': 'gfhgffg'}), {} из функции send_message()
+2023-07-02 14:20:00,794 INFO client.py  Функция arg_parser_client() вызвана c параметрами:(), {} из функции main()
+2023-07-02 14:20:03,957 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: petya
+2023-07-02 14:20:04,327 INFO transport.py Попытка подключения №1
+2023-07-02 14:20:04,327 DEBUG transport.py Установлено соединение с сервером
+2023-07-02 14:20:04,327 DEBUG transport.py Сформировано presence сообщение для пользователя petya
+2023-07-02 14:20:04,329 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1688289604.3275342, 'user': {'account_name': 'petya'}}), {} из функции connection_init()
+2023-07-02 14:20:04,496 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>,), {} из функции connection_init()
+2023-07-02 14:20:04,496 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:20:04,496 INFO transport.py Соединение с сервером успешно установлено.
+2023-07-02 14:20:04,496 DEBUG transport.py Запрос списка известных пользователей petya
+2023-07-02 14:20:04,497 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688289604.4962459, 'account_name': 'petya'}), {} из функции user_list_update()
+2023-07-02 14:20:05,015 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 14:20:05,093 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2023-07-02 14:20:05,093 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1688289605.0930107, 'user': 'petya'}
+2023-07-02 14:20:05,095 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1688289605.0930107, 'user': 'petya'}), {} из функции contacts_list_update()
+2023-07-02 14:20:05,531 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>,), {} из функции contacts_list_update()
+2023-07-02 14:20:05,531 DEBUG transport.py Получен ответ {'response': 202, 'data_list': []}
+2023-07-02 14:20:05,532 DEBUG transport.py Запущен процесс - приёмник собщений с сервера.
+2023-07-02 14:20:12,053 DEBUG transport.py Создание контакта test78
+2023-07-02 14:20:12,055 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>, {'action': 'add', 'time': 1688289612.0538626, 'user': 'petya', 'account_name': 'test78'}), {} из функции add_contact()
+2023-07-02 14:20:12,178 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>,), {} из функции add_contact()
+2023-07-02 14:20:12,178 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:20:12,276 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x000001B0E0D0AEF0>
+2023-07-02 14:20:16,373 DEBUG transport.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'petya', 'to': 'test78', 'time': 1688289616.3738549, 'mess_text': 'dd'}
+2023-07-02 14:20:16,375 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'sender': 'petya', 'to': 'test78', 'time': 1688289616.3738549, 'mess_text': 'dd'}), {} из функции send_message()
+2023-07-02 14:20:41,130 DEBUG transport.py Создание контакта yrt6
+2023-07-02 14:20:41,485 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>, {'action': 'add', 'time': 1688289641.1306267, 'user': 'petya', 'account_name': 'yrt6'}), {} из функции add_contact()
+2023-07-02 14:20:41,678 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>,), {} из функции add_contact()
+2023-07-02 14:20:41,678 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:20:41,766 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x000001B0E4219AB0>
+2023-07-02 14:20:46,265 DEBUG transport.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'petya', 'to': 'yrt6', 'time': 1688289646.265803, 'mess_text': 'rrr'}
+2023-07-02 14:20:46,267 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'sender': 'petya', 'to': 'yrt6', 'time': 1688289646.265803, 'mess_text': 'rrr'}), {} из функции send_message()
+2023-07-02 14:20:47,569 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>,), {} из функции run()
+2023-07-02 14:20:47,569 DEBUG transport.py Принято сообщение с сервера: {'action': 'message', 'sender': 'petya', 'to': 'yrt6', 'time': 1688289646.265803, 'mess_text': 'rrr'}
+2023-07-02 14:20:47,569 DEBUG transport.py Разбор сообщения от сервера: {'action': 'message', 'sender': 'petya', 'to': 'yrt6', 'time': 1688289646.265803, 'mess_text': 'rrr'}
+2023-07-02 14:20:47,569 DEBUG transport.py Получено сообщение от пользователя petya:rrr
+2023-07-02 14:20:54,461 DEBUG transport.py Запрос списка известных пользователей petya
+2023-07-02 14:20:54,771 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1688289654.4616222, 'account_name': 'petya'}), {} из функции user_list_update()
+2023-07-02 14:20:54,819 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>,), {} из функции user_list_update()
+2023-07-02 14:20:54,908 DEBUG add_contact.py Обновление списка пользователей с сервера выполнено
+2023-07-02 14:20:56,531 DEBUG transport.py Создание контакта trewt766
+2023-07-02 14:20:56,534 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>, {'action': 'add', 'time': 1688289656.5325124, 'user': 'petya', 'account_name': 'trewt766'}), {} из функции add_contact()
+2023-07-02 14:20:56,935 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>,), {} из функции add_contact()
+2023-07-02 14:20:56,935 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:20:57,024 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x000001B0E421A050>
+2023-07-02 14:21:01,525 DEBUG transport.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'petya', 'to': 'trewt766', 'time': 1688289661.5259488, 'mess_text': 'rrr'}
+2023-07-02 14:21:01,526 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'sender': 'petya', 'to': 'trewt766', 'time': 1688289661.5259488, 'mess_text': 'rrr'}), {} из функции send_message()
+2023-07-02 14:21:07,869 DEBUG transport.py Создание контакта petya
+2023-07-02 14:21:07,871 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>, {'action': 'add', 'time': 1688289667.8693182, 'user': 'yrt6', 'account_name': 'petya'}), {} из функции add_contact()
+2023-07-02 14:21:08,210 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>,), {} из функции add_contact()
+2023-07-02 14:21:08,210 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2023-07-02 14:21:08,299 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x000002624B91BF40>
+2023-07-02 14:21:14,861 DEBUG transport.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'yrt6', 'to': 'petya', 'time': 1688289674.861481, 'mess_text': 'tt'}
+2023-07-02 14:21:14,881 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'sender': 'yrt6', 'to': 'petya', 'time': 1688289674.861481, 'mess_text': 'tt'}), {} из функции send_message()
+2023-07-02 14:21:15,650 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>,), {} из функции run()
+2023-07-02 14:21:15,651 DEBUG transport.py Принято сообщение с сервера: {'action': 'message', 'sender': 'yrt6', 'to': 'petya', 'time': 1688289674.861481, 'mess_text': 'tt'}
+2023-07-02 14:21:15,651 DEBUG transport.py Разбор сообщения от сервера: {'action': 'message', 'sender': 'yrt6', 'to': 'petya', 'time': 1688289674.861481, 'mess_text': 'tt'}
+2023-07-02 14:21:15,651 DEBUG transport.py Получено сообщение от пользователя yrt6:tt
+2023-07-02 14:21:25,914 DEBUG transport.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'petya', 'to': 'yrt6', 'time': 1688289685.9145477, 'mess_text': 'qq'}
+2023-07-02 14:21:26,323 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'sender': 'petya', 'to': 'yrt6', 'time': 1688289685.9145477, 'mess_text': 'qq'}), {} из функции send_message()
+2023-07-02 14:21:27,437 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>,), {} из функции run()
+2023-07-02 14:21:27,437 DEBUG transport.py Принято сообщение с сервера: {'action': 'message', 'sender': 'petya', 'to': 'yrt6', 'time': 1688289685.9145477, 'mess_text': 'qq'}
+2023-07-02 14:21:27,437 DEBUG transport.py Разбор сообщения от сервера: {'action': 'message', 'sender': 'petya', 'to': 'yrt6', 'time': 1688289685.9145477, 'mess_text': 'qq'}
+2023-07-02 14:21:27,437 DEBUG transport.py Получено сообщение от пользователя petya:qq
+2023-07-02 14:21:33,479 DEBUG transport.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'yrt6', 'to': 'petya', 'time': 1688289693.4791243, 'mess_text': '66'}
+2023-07-02 14:21:33,581 INFO transport.py  Функция send_message() вызвана c параметрами:(<socket.socket fd=788, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54193), raddr=('127.0.0.1', 7777)>, {'action': 'message', 'sender': 'yrt6', 'to': 'petya', 'time': 1688289693.4791243, 'mess_text': '66'}), {} из функции send_message()
+2023-07-02 14:21:34,334 INFO transport.py  Функция get_message() вызвана c параметрами:(<socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 54202), raddr=('127.0.0.1', 7777)>,), {} из функции run()
+2023-07-02 14:21:34,335 DEBUG transport.py Принято сообщение с сервера: {'action': 'message', 'sender': 'yrt6', 'to': 'petya', 'time': 1688289693.4791243, 'mess_text': '66'}
+2023-07-02 14:21:34,335 DEBUG transport.py Разбор сообщения от сервера: {'action': 'message', 'sender': 'yrt6', 'to': 'petya', 'time': 1688289693.4791243, 'mess_text': '66'}
+2023-07-02 14:21:34,335 DEBUG transport.py Получено сообщение от пользователя yrt6:66
