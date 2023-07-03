@@ -3,7 +3,8 @@ import logging
 from common.classes.ORM.ServerStorage import ServerStorage
 from common.utils import get_message, send_message
 from common.variables import ERROR, ACCOUNT_NAME, ACTION, EXIT, SENDER, MESSAGE_TEXT, TIME, DESTINATION, MESSAGE, \
-    RESPONSE_400, RESPONSE_200, USER, PRESENCE
+    RESPONSE_400, RESPONSE_200, USER, PRESENCE, ADD_CONTACT, REMOVE_CONTACT, GET_CONTACTS, USERS_REQUEST, RESPONSE_202, \
+    LIST_INFO
 import select
 import socket
 
@@ -113,7 +114,7 @@ class Server(metaclass=ServerMaker):
                             f'Клиент {client_with_message.getpeername()} отключился от сервера.')
                         for name in self.names:
                             if self.names[name] == client_with_message:
-                                self.database.user_logout(name)
+                                self.db.user_logout(name)
                                 del self.names[name]
                                 break
                         self.clients.remove(client_with_message)
@@ -126,7 +127,7 @@ class Server(metaclass=ServerMaker):
                     self.logger.info(
                         f'Связь с клиентом с именем {message[DESTINATION]} была потеряна')
                     self.clients.remove(self.names[message[DESTINATION]])
-                    self.database.user_logout(message[DESTINATION])
+                    self.db.user_logout(message[DESTINATION])
                     del self.names[message[DESTINATION]]
             self.messages.clear()
     def process_message(self, message, listen_socks):
@@ -166,6 +167,31 @@ class Server(metaclass=ServerMaker):
             self.names[ACCOUNT_NAME].close()
             del self.names[message[ACCOUNT_NAME]]
             return
+        # Если это запрос контакт-листа
+        elif ACTION in message and message[ACTION] == GET_CONTACTS and USER in message and \
+             self.names[message[USER]] == client:
+            response = RESPONSE_202
+            response[LIST_INFO] = self.db.get_contacts(message[USER])
+            send_message(client, response)
+
+        # Если это добавление контакта
+        elif ACTION in message and message[ACTION] == ADD_CONTACT and ACCOUNT_NAME in message and USER in message \
+                and self.names[message[USER]] == client:
+            self.db.add_contact(message[USER], message[ACCOUNT_NAME])
+            send_message(client, RESPONSE_200)
+
+        # Если это удаление контакта
+        elif ACTION in message and message[ACTION] == REMOVE_CONTACT and ACCOUNT_NAME in message and USER in message \
+                and self.names[message[USER]] == client:
+            self.db.remove_contact(message[USER], message[ACCOUNT_NAME])
+            send_message(client, RESPONSE_200)
+
+        # Если это запрос известных пользователей
+        elif ACTION in message and message[ACTION] == USERS_REQUEST and ACCOUNT_NAME in message \
+                and self.names[message[ACCOUNT_NAME]] == client:
+            response = RESPONSE_202
+            response[LIST_INFO] = [user[0] for user in self.db.users_list()]
+            send_message(client, response)
         else:
             response = RESPONSE_400
             response[ERROR] = "Запрос некорректен."

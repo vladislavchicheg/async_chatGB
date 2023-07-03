@@ -47,6 +47,9 @@ RESPONSE_400 = {
             RESPONSE: 400,
             ERROR: None
         }
+RESPONSE_202 = {RESPONSE: 202,
+                LIST_INFO:None
+                }
 DATA_BASES_PATH = 'data_bases'
 SERVER_DATABASE_NAME = "Server_db.sqlite"
 CLIENT_DATABASE_NAME = "Client_db"
