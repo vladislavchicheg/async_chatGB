@@ -47,8 +47,12 @@ class ServerStorage:
 
     def __init__(self, path):
         self.database_path = Path(__file__).resolve().parents[3]
-        self.database_engine = create_engine(f'sqlite:///{self.database_path}{path}', echo=False, pool_recycle=7200,
-                                             connect_args={'check_same_thread': False})
+        self.database_engine = create_engine(
+            f'sqlite:///{self.database_path}{path}',
+            echo=False,
+            pool_recycle=7200,
+            connect_args={
+                'check_same_thread': False})
         self.metadata = MetaData()
         users_table = Table('Users', self.metadata,
                             Column('id', Integer, primary_key=True),
@@ -56,13 +60,13 @@ class ServerStorage:
                             Column('last_login', DateTime)
                             )
 
-        active_users_table = Table('Active_users', self.metadata,
-                                   Column('id', Integer, primary_key=True),
-                                   Column('user', ForeignKey('Users.id'), unique=True),
-                                   Column('ip_address', String),
-                                   Column('port', Integer),
-                                   Column('login_time', DateTime)
-                                   )
+        active_users_table = Table(
+            'Active_users', self.metadata, Column(
+                'id', Integer, primary_key=True), Column(
+                'user', ForeignKey('Users.id'), unique=True), Column(
+                'ip_address', String), Column(
+                    'port', Integer), Column(
+                        'login_time', DateTime))
 
         user_login_history = Table('Login_history', self.metadata,
                                    Column('id', Integer, primary_key=True),
@@ -112,38 +116,56 @@ class ServerStorage:
             self.session.add(user)
             self.session.commit()
 
-        new_active_user = self.ActiveUsers(user.id, ip_address, port, datetime.datetime.now())
+        new_active_user = self.ActiveUsers(
+            user.id, ip_address, port, datetime.datetime.now())
         self.session.add(new_active_user)
 
-        history = self.LoginHistory(user.id, datetime.datetime.now(), ip_address, port)
+        history = self.LoginHistory(
+            user.id, datetime.datetime.now(), ip_address, port)
         self.session.add(history)
 
         self.session.commit()
 
     def user_logout(self, username):
 
-        user = self.session.query(self.AllUsers).filter_by(name=username).first()
+        user = self.session.query(
+            self.AllUsers).filter_by(
+            name=username).first()
         self.session.query(self.ActiveUsers).filter_by(user=user.id).delete()
         self.session.commit()
 
     def process_message(self, sender, recipient):
         # Получаем ID отправителя и получателя
-        sender = self.session.query(self.AllUsers).filter_by(name=sender).first().id
-        recipient = self.session.query(self.AllUsers).filter_by(name=recipient).first().id
+        sender = self.session.query(
+            self.AllUsers).filter_by(
+            name=sender).first().id
+        recipient = self.session.query(
+            self.AllUsers).filter_by(
+            name=recipient).first().id
         # Запрашиваем строки из истории и увеличиваем счётчики
-        sender_row = self.session.query(self.UsersHistory).filter_by(user=sender).first()
+        sender_row = self.session.query(
+            self.UsersHistory).filter_by(
+            user=sender).first()
         sender_row.sent += 1
-        recipient_row = self.session.query(self.UsersHistory).filter_by(user=recipient).first()
+        recipient_row = self.session.query(
+            self.UsersHistory).filter_by(
+            user=recipient).first()
         recipient_row.accepted += 1
         self.session.commit()
 
     def add_contact(self, user, contact):
         # Получаем ID пользователей
         user = self.session.query(self.AllUsers).filter_by(name=user).first()
-        contact = self.session.query(self.AllUsers).filter_by(name=contact).first()
+        contact = self.session.query(
+            self.AllUsers).filter_by(
+            name=contact).first()
 
-        # Проверяем что не дубль и что контакт может существовать (полю пользователь мы доверяем)
-        if not contact or self.session.query(self.UsersContacts).filter_by(user=user.id, contact=contact.id).count():
+        # Проверяем что не дубль и что контакт может существовать (полю
+        # пользователь мы доверяем)
+        if not contact or self.session.query(
+                self.UsersContacts).filter_by(
+                user=user.id,
+                contact=contact.id).count():
             return
 
         # Создаём объект и заносим его в базу
@@ -154,9 +176,12 @@ class ServerStorage:
     def remove_contact(self, user, contact):
         # Получаем ID пользователей
         user = self.session.query(self.AllUsers).filter_by(name=user).first()
-        contact = self.session.query(self.AllUsers).filter_by(name=contact).first()
+        contact = self.session.query(
+            self.AllUsers).filter_by(
+            name=contact).first()
 
-        # Проверяем что контакт может существовать (полю пользователь мы доверяем)
+        # Проверяем что контакт может существовать (полю пользователь мы
+        # доверяем)
         if not contact:
             return
 
@@ -228,6 +253,6 @@ if __name__ == '__main__':
     # выводим список активных пользователей
     # print(test_db.active_users_list())
     # запрашиваем историю входов по пользователю
-    print(test_db.login_history('petya'));
+    print(test_db.login_history('petya'))
     # выводим список известных пользователей
     print(test_db.users_list())

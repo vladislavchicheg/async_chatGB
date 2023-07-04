@@ -1,3 +1,11 @@
+from common.variables import MESSAGE_TEXT, SENDER
+from common.errors import ServerError
+from client.start_dialog import UserNameDialog
+from client.transport import ClientTransport
+from client.database import ClientDatabase
+from client.del_contact import DelContactDialog
+from client.add_contact import AddContactDialog
+from client.main_window_conv import Ui_MainClientWindow
 import sys
 
 from PyQt5.QtWidgets import QMainWindow, qApp, QMessageBox, QApplication, QListView
@@ -10,14 +18,6 @@ import logging
 import base64
 
 sys.path.append('../')
-from client.main_window_conv import Ui_MainClientWindow
-from client.add_contact import AddContactDialog
-from client.del_contact import DelContactDialog
-from client.database import ClientDatabase
-from client.transport import ClientTransport
-from client.start_dialog import UserNameDialog
-from common.errors import ServerError
-from common.variables import MESSAGE_TEXT, SENDER
 
 logger = logging.getLogger('client')
 
@@ -72,7 +72,8 @@ class ClientMainWindow(QMainWindow):
     # Деактивировать поля ввода
     def set_disabled_input(self):
         # Надпись  - получатель.
-        self.ui.label_new_message.setText('Для выбора получателя дважды кликните на нем в окне контактов.')
+        self.ui.label_new_message.setText(
+            'Для выбора получателя дважды кликните на нем в окне контактов.')
         self.ui.text_message.clear()
         if self.history_model:
             self.history_model.clear()
@@ -88,7 +89,10 @@ class ClientMainWindow(QMainWindow):
 
     def history_list_update(self):
         # Получаем историю сортированную по дате
-        list = sorted(self.database.get_history(self.current_chat), key=lambda item: item[3])
+        list = sorted(
+            self.database.get_history(
+                self.current_chat),
+            key=lambda item: item[3])
         # Если модель не создана, создадим.
         if not self.history_model:
             self.history_model = QStandardItemModel()
@@ -105,13 +109,15 @@ class ClientMainWindow(QMainWindow):
         for i in range(start_index, length):
             item = list[i]
             if item[1] == 'in':
-                mess = QStandardItem(f'Входящее от {item[3].replace(microsecond=0)}:\n {item[2]}')
+                mess = QStandardItem(
+                    f'Входящее от {item[3].replace(microsecond=0)}:\n {item[2]}')
                 mess.setEditable(False)
                 mess.setBackground(QBrush(QColor(255, 213, 213)))
                 mess.setTextAlignment(Qt.AlignLeft)
                 self.history_model.appendRow(mess)
             else:
-                mess = QStandardItem(f'Исходящее от {item[3].replace(microsecond=0)}:\n {item[2]}')
+                mess = QStandardItem(
+                    f'Исходящее от {item[3].replace(microsecond=0)}:\n {item[2]}')
                 mess.setEditable(False)
                 mess.setTextAlignment(Qt.AlignRight)
                 mess.setBackground(QBrush(QColor(204, 255, 204)))
@@ -120,7 +126,8 @@ class ClientMainWindow(QMainWindow):
 
     # Функция обработчик даблклика по контакту
     def select_active_user(self):
-        # Выбранный пользователем (даблклик) находится в выделеном элементе в QListView
+        # Выбранный пользователем (даблклик) находится в выделеном элементе в
+        # QListView
         self.current_chat = self.ui.list_contacts.currentIndex().data()
         # вызываем основную функцию
         self.set_active_user()
@@ -175,7 +182,8 @@ class ClientMainWindow(QMainWindow):
             lambda: self.add_contact_action(select_dialog))
         select_dialog.show()
 
-    # Функция - обработчик добавления, сообщает серверу, обновляет таблицу и список контактов
+    # Функция - обработчик добавления, сообщает серверу, обновляет таблицу и
+    # список контактов
     def add_contact_action(self, item):
         new_contact = item.selector.currentText()
         self.add_contact(new_contact)
@@ -210,7 +218,8 @@ class ClientMainWindow(QMainWindow):
             lambda: self.delete_contact(remove_dialog))
         remove_dialog.show()
 
-    # Функция обработчик удаления контакта, сообщает на сервер, обновляет таблицу контактов
+    # Функция обработчик удаления контакта, сообщает на сервер, обновляет
+    # таблицу контактов
     def delete_contact(self, item):
         selected = item.selector.currentText()
         try:
@@ -236,7 +245,8 @@ class ClientMainWindow(QMainWindow):
 
     # Функция отправки собщения пользователю.
     def send_message(self):
-        # Текст в поле, проверяем что поле не пустое затем забирается сообщение и поле очищается
+        # Текст в поле, проверяем что поле не пустое затем забирается сообщение
+        # и поле очищается
         message_text = self.ui.text_message.toPlainText()
         self.ui.text_message.clear()
         if not message_text:
@@ -330,7 +340,10 @@ class ClientMainWindow(QMainWindow):
     # Выдаёт сообщение о ошибке и завершает работу приложения
     @pyqtSlot()
     def connection_lost(self):
-        self.messages.warning(self, 'Сбой соединения', 'Потеряно соединение с сервером. ')
+        self.messages.warning(
+            self,
+            'Сбой соединения',
+            'Потеряно соединение с сервером. ')
         self.close()
 
     @pyqtSlot()

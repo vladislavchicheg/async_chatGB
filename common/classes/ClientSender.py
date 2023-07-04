@@ -11,6 +11,7 @@ logger = logging.getLogger('client')
 sock_lock = threading.Lock()
 database_lock = threading.Lock()
 
+
 class ClientSender(threading.Thread, metaclass=ClientMaker):
     def __init__(self, account_name, sock, database):
         self.account_name = account_name
@@ -40,7 +41,7 @@ class ClientSender(threading.Thread, metaclass=ClientMaker):
         try:
             send_message(self.sock, message_dict)
             self.logger.info(f"Отправлено сообщение для пользователя {to}")
-        except:
+        except BaseException:
             self.logger.critical("Потеряно соединение с сервером.")
             exit(1)
 
@@ -55,14 +56,15 @@ class ClientSender(threading.Thread, metaclass=ClientMaker):
             elif command == "exit":
                 try:
                     send_message(self.sock, self.create_exit_message())
-                except:
+                except BaseException:
                     pass
                 print("Завершение соединения.")
                 self.logger.info("Завершение работы по команде пользователя.")
                 time.sleep(1)
                 break
             else:
-                print("Команда не распознана, попробойте снова. help - вывести поддерживаемые команды.")
+                print(
+                    "Команда не распознана, попробойте снова. help - вывести поддерживаемые команды.")
 
     def print_help(self):
         print('Поддерживаемые команды:')
@@ -74,16 +76,21 @@ class ClientSender(threading.Thread, metaclass=ClientMaker):
         print('exit - выход из программы')
 
     def print_history(self):
-        ask = input('Показать входящие сообщения - in, исходящие - out, все - просто Enter: ')
+        ask = input(
+            'Показать входящие сообщения - in, исходящие - out, все - просто Enter: ')
         with database_lock:
             if ask == 'in':
-                history_list = self.database.get_history(to_who=self.account_name)
+                history_list = self.database.get_history(
+                    to_who=self.account_name)
                 for message in history_list:
-                    print(f'\nСообщение от пользователя: {message[0]} от {message[3]}:\n{message[2]}')
+                    print(
+                        f'\nСообщение от пользователя: {message[0]} от {message[3]}:\n{message[2]}')
             elif ask == 'out':
-                history_list = self.database.get_history(from_who=self.account_name)
+                history_list = self.database.get_history(
+                    from_who=self.account_name)
                 for message in history_list:
-                    print(f'\nСообщение пользователю: {message[1]} от {message[3]}:\n{message[2]}')
+                    print(
+                        f'\nСообщение пользователю: {message[1]} от {message[3]}:\n{message[2]}')
             else:
                 history_list = self.database.get_history()
                 for message in history_list:
@@ -110,4 +117,5 @@ class ClientSender(threading.Thread, metaclass=ClientMaker):
                     try:
                         add_contact(self.sock, self.account_name, edit)
                     except ServerError:
-                        logger.error('Не удалось отправить информацию на сервер.')
+                        logger.error(
+                            'Не удалось отправить информацию на сервер.')

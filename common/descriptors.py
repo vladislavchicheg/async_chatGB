@@ -23,7 +23,8 @@ class IpAddress:
         except ValueError:
             correct_ip = False
         if not correct_ip and value != '':
-            logger.critical(f"Попытка запуска сервера с указанием некорректного ip")
+            logger.critical(
+                f"Попытка запуска сервера с указанием некорректного ip")
             exit(1)
         instance.__dict__[self.name] = value
 

@@ -24,7 +24,8 @@ class ClientReader(threading.Thread, metaclass=ClientMaker):
     def run(self):
         while True:
             # Отдыхаем секунду и снова пробуем захватить сокет.
-            # если не сделать тут задержку, то второй поток может достаточно долго ждать освобождения сокета.
+            # если не сделать тут задержку, то второй поток может достаточно
+            # долго ждать освобождения сокета.
             time.sleep(1)
             with sock_lock:
                 try:
@@ -32,8 +33,10 @@ class ClientReader(threading.Thread, metaclass=ClientMaker):
 
                 # Принято некорректное сообщение
                 except IncorrectDataRecivedError:
-                    logger.error(f'Не удалось декодировать полученное сообщение.')
-                # Вышел таймаут соединения если errno = None, иначе обрыв соединения.
+                    logger.error(
+                        f'Не удалось декодировать полученное сообщение.')
+                # Вышел таймаут соединения если errno = None, иначе обрыв
+                # соединения.
                 except OSError as err:
                     if err.errno:
                         logger.critical(f'Потеряно соединение с сервером.')
@@ -42,18 +45,25 @@ class ClientReader(threading.Thread, metaclass=ClientMaker):
                 except (ConnectionError, ConnectionAbortedError, ConnectionResetError, json.JSONDecodeError):
                     logger.critical(f'Потеряно соединение с сервером.')
                     break
-                # Если пакет корретно получен выводим в консоль и записываем в базу.
+                # Если пакет корретно получен выводим в консоль и записываем в
+                # базу.
                 else:
                     if ACTION in message and message[ACTION] == MESSAGE and SENDER in message and DESTINATION in message \
                             and MESSAGE_TEXT in message and message[DESTINATION] == self.account_name:
-                        print(f'\nПолучено сообщение от пользователя {message[SENDER]}:\n{message[MESSAGE_TEXT]}')
-                        # Захватываем работу с базой данных и сохраняем в неё сообщение
+                        print(
+                            f'\nПолучено сообщение от пользователя {message[SENDER]}:\n{message[MESSAGE_TEXT]}')
+                        # Захватываем работу с базой данных и сохраняем в неё
+                        # сообщение
                         with database_lock:
                             try:
-                                self.database.save_message(message[SENDER], self.account_name, message[MESSAGE_TEXT])
-                            except:
-                                logger.error('Ошибка взаимодействия с базой данных')
+                                self.database.save_message(
+                                    message[SENDER], self.account_name, message[MESSAGE_TEXT])
+                            except BaseException:
+                                logger.error(
+                                    'Ошибка взаимодействия с базой данных')
 
-                        logger.info(f'Получено сообщение от пользователя {message[SENDER]}:\n{message[MESSAGE_TEXT]}')
+                        logger.info(
+                            f'Получено сообщение от пользователя {message[SENDER]}:\n{message[MESSAGE_TEXT]}')
                     else:
-                        logger.error(f'Получено некорректное сообщение с сервера: {message}')
+                        logger.error(
+                            f'Получено некорректное сообщение с сервера: {message}')

@@ -13,6 +13,7 @@ from error import ServerError
 
 client_logger = logging.getLogger('client')
 
+
 @log
 def get_message(sock):
     encoded_response = sock.recv(MAX_PACKAGE_LENGTH)
@@ -52,7 +53,8 @@ def create_presence(account_name):
             ACCOUNT_NAME: account_name
         }
     }
-    logger.debug(f"Сформировано {PRESENCE} сообщение для пользователя {account_name}")
+    logger.debug(
+        f"Сформировано {PRESENCE} сообщение для пользователя {account_name}")
     return out
 
 
@@ -91,6 +93,8 @@ def arg_parser_client():
     return server_address, server_port, client_name, client_passwd
 
 # Функция запрос контакт листа
+
+
 def contacts_list_request(sock, name):
     client_logger.debug(f'Запрос контакт листа для пользователся {name}')
     req = {
@@ -160,7 +164,8 @@ def remove_contact(sock, username, contact):
     print('Удачное удаление')
 
 
-# Функция инициализатор базы данных. Запускается при запуске, загружает данные в базу с сервера.
+# Функция инициализатор базы данных. Запускается при запуске, загружает
+# данные в базу с сервера.
 def database_load(sock, database, username):
     # Загружаем список известных пользователей
     try:
@@ -178,5 +183,3 @@ def database_load(sock, database, username):
     else:
         for contact in contacts_list:
             database.add_contact(contact)
-
-

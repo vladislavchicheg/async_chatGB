@@ -54,23 +54,27 @@ class Server(metaclass=ServerMaker):
             err_lst = []
             try:
                 if self.clients:
-                    recv_data_lst, send_data_lst, err_lst = select.select(self.clients, self.clients, [], 0)
+                    recv_data_lst, send_data_lst, err_lst = select.select(
+                        self.clients, self.clients, [], 0)
             except OSError:
                 pass
 
             if recv_data_lst:
                 for client_with_message in recv_data_lst:
                     try:
-                        self.process_client_message(get_message(client_with_message), client_with_message)
-                    except:
-                        self.logger.info(f"Клиент {client_with_message.getpeername()} отключился от сервера.")
+                        self.process_client_message(
+                            get_message(client_with_message), client_with_message)
+                    except BaseException:
+                        self.logger.info(
+                            f"Клиент {client_with_message.getpeername()} отключился от сервера.")
                         self.clients.remove(client_with_message)
 
             for message in self.messages:
                 try:
                     self.process_message(message, send_data_lst)
-                except:
-                    self.logger.info(f"Связь с клиентом с именем {message[DESTINATION]} была потеряна")
+                except BaseException:
+                    self.logger.info(
+                        f"Связь с клиентом с именем {message[DESTINATION]} была потеряна")
                     self.clients.remove(self.names[message[DESTINATION]])
                     del self.names[message[DESTINATION]]
             self.messages.clear()
@@ -130,8 +134,10 @@ class Server(metaclass=ServerMaker):
                     self.db.user_logout(message[DESTINATION])
                     del self.names[message[DESTINATION]]
             self.messages.clear()
+
     def process_message(self, message, listen_socks):
-        if message[DESTINATION] in self.names and self.names[message[DESTINATION]] in listen_socks:
+        if message[DESTINATION] in self.names and self.names[message[DESTINATION]
+                                                             ] in listen_socks:
             send_message(self.names[message[DESTINATION]], message)
             self.logger.info(
                 f"Отправлено сообщение пользователю {message[DESTINATION]} от пользователя {message[SENDER]}.")
@@ -147,7 +153,10 @@ class Server(metaclass=ServerMaker):
             if message[USER][ACCOUNT_NAME] not in self.names.keys():
                 self.names[message[USER][ACCOUNT_NAME]] = client
                 client_ip, client_port = client.getpeername()
-                self.db.user_login(message[USER][ACCOUNT_NAME], client_ip, client_port)
+                self.db.user_login(
+                    message[USER][ACCOUNT_NAME],
+                    client_ip,
+                    client_port)
                 send_message(client, RESPONSE_200)
             else:
                 response = RESPONSE_400
@@ -161,7 +170,8 @@ class Server(metaclass=ServerMaker):
             self.messages.append(message)
             return
         elif ACTION in message and message[ACTION] == EXIT and ACCOUNT_NAME in message:
-            self.logger.info(f'Пользователь {message[ACCOUNT_NAME]} разлогинился')
+            self.logger.info(
+                f'Пользователь {message[ACCOUNT_NAME]} разлогинился')
             self.db.user_logout(message[ACCOUNT_NAME])
             self.clients.remove(self.names[message[ACCOUNT_NAME]])
             self.names[ACCOUNT_NAME].close()
@@ -169,7 +179,7 @@ class Server(metaclass=ServerMaker):
             return
         # Если это запрос контакт-листа
         elif ACTION in message and message[ACTION] == GET_CONTACTS and USER in message and \
-             self.names[message[USER]] == client:
+                self.names[message[USER]] == client:
             response = RESPONSE_202
             response[LIST_INFO] = self.db.get_contacts(message[USER])
             send_message(client, response)
