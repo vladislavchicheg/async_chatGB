@@ -18,10 +18,16 @@ class ClientTestCase(unittest.TestCase):
         self.assertEqual(process_response({RESPONSE: 200}), '200 : OK')
 
     def test_400_response(self):
+        """
+
+        """
         self.assertEqual(process_response(
             {RESPONSE: 400, ERROR: 'Bad Request'}), '400 : Bad Request')
 
     def test_no_response(self):
+        """
+
+        """
         self.assertRaises(ValueError, process_response, {ERROR: 'Bad Request'})
 
 
