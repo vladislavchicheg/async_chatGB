@@ -1,10 +1,12 @@
 import json
 import logging
+import os
 import sys
 import time
 import socket
 
-from PyQt5.QtWidgets import QApplication
+from Cryptodome.PublicKey import RSA
+from PyQt5.QtWidgets import QApplication, QMessageBox
 
 from common.utils import arg_parser_client
 from common.variables import *
@@ -20,13 +22,14 @@ logger = logging.getLogger('client')
 def main():
     print("Консольный месседжер. Клиентский модуль.")
 
-    server_address, server_port, client_name = arg_parser_client()
+    server_address, server_port, client_name, client_passwd = arg_parser_client()
     client_app = QApplication(sys.argv)
-    if not client_name:
-        start_dialog = UserNameDialog()
+    start_dialog = UserNameDialog()
+    if not client_name or not client_passwd:
         client_app.exec_()
         if start_dialog.ok_pressed:
             client_name = start_dialog.client_name.text()
+            client_passwd = start_dialog.client_passwd.text()
             del start_dialog
         else:
             exit(0)
@@ -34,17 +37,29 @@ def main():
     logger.info(
         f"Запущен клиент с парамертами: адрес сервера: {server_address}, "
         f"порт: {server_port}, имя пользователя: {client_name}")
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    key_file = os.path.join(dir_path, f'{client_name}.key')
+    if not os.path.exists(key_file):
+        keys = RSA.generate(2048, os.urandom)
+        with open(key_file, 'wb') as key:
+            key.write(keys.export_key())
+    else:
+        with open(key_file, 'rb') as key:
+            keys = RSA.import_key(key.read())
+
+    # !!!keys.publickey().export_key()
+    logger.debug("Keys sucsessfully loaded.")
     database = ClientDatabase(client_name)
     try:
-        transport = ClientTransport(server_port, server_address, database, client_name)
+        transport = ClientTransport(server_port, server_address, database, client_name, client_passwd,
+                                    keys)
     except ServerError as error:
-        print(error.text)
-        exit(1)
+        message = QMessageBox()
+        message.critical(start_dialog, 'Ошибка сервера', error.text)
     transport.daemon = True
     transport.start()
-
     # Создаём GUI
-    main_window = ClientMainWindow(database, transport)
+    main_window = ClientMainWindow(database, transport, keys)
     main_window.make_connection(transport)
     main_window.setWindowTitle(f'Чат Программа alpha release - {client_name}')
     client_app.exec_()

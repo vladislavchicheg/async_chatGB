@@ -16,14 +16,12 @@ client_logger = logging.getLogger('client')
 @log
 def get_message(sock):
     encoded_response = sock.recv(MAX_PACKAGE_LENGTH)
-    print(encoded_response)
-    if isinstance(encoded_response, bytes):
-        json_response = encoded_response.decode(ENCODING)
-        response = json.loads(json_response)
-        if isinstance(response, dict):
-            return response
-        raise ValueError
-    raise ValueError
+    json_response = encoded_response.decode(ENCODING)
+    response = json.loads(json_response)
+    if isinstance(response, dict):
+        return response
+    else:
+        raise TypeError
 
 
 @log
@@ -72,21 +70,25 @@ def process_response_ans(message):
 
 @log
 def arg_parser_client():
+    logger = logging.getLogger('client')
     parser = argparse.ArgumentParser()
-    parser.add_argument("addr", default=DEFAULT_IP_ADDRESS, nargs="?")
-    parser.add_argument("port", default=DEFAULT_PORT, type=int, nargs="?")
-    parser.add_argument("-n", "--name", default=None, nargs="?")
+    parser.add_argument('addr', default=DEFAULT_IP_ADDRESS, nargs='?')
+    parser.add_argument('port', default=DEFAULT_PORT, type=int, nargs='?')
+    parser.add_argument('-n', '--name', default=None, nargs='?')
+    parser.add_argument('-p', '--password', default='', nargs='?')
     namespace = parser.parse_args(sys.argv[1:])
     server_address = namespace.addr
     server_port = namespace.port
     client_name = namespace.name
-    logger = logging.getLogger('client')
+    client_passwd = namespace.password
+
+    # проверим подходящий номер порта
     if not 1023 < server_port < 65536:
         logger.critical(
-            f"Попытка запуска клиента с неподходящим номером порта: {server_port}. Допустимы адреса с 1024 до 65535. Клиент завершается.")
+            f'Попытка запуска клиента с неподходящим номером порта: {server_port}. Допустимы адреса с 1024 до 65535. Клиент завершается.')
         exit(1)
 
-    return server_address, server_port, client_name
+    return server_address, server_port, client_name, client_passwd
 
 # Функция запрос контакт листа
 def contacts_list_request(sock, name):

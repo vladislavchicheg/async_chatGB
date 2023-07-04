@@ -12,7 +12,7 @@ MAX_CONNECTIONS = 5
 MAX_PACKAGE_LENGTH = 1024
 # Кодировка проекта
 ENCODING = 'utf-8'
-
+SERVER_CONFIG = 'server.ini'
 # Протокол JIM основные ключи:
 ACTION = 'action'
 TIME = 'time'
@@ -41,7 +41,10 @@ LIST_INFO = 'data_list'
 REMOVE_CONTACT = 'remove'
 ADD_CONTACT = 'add'
 USERS_REQUEST = 'get_users'
+PUBLIC_KEY_REQUEST = 'pubkey_need'
 DESTINATION = 'to'
+DATA = 'bin'
+PUBLIC_KEY = 'pubkey'
 RESPONSE_200 = {RESPONSE: 200}
 RESPONSE_400 = {
             RESPONSE: 400,
@@ -50,6 +53,13 @@ RESPONSE_400 = {
 RESPONSE_202 = {RESPONSE: 202,
                 LIST_INFO:None
                 }
+RESPONSE_205 = {
+    RESPONSE: 205
+}
+RESPONSE_511 = {
+    RESPONSE: 511,
+    DATA: None
+}
 DATA_BASES_PATH = 'data_bases'
 SERVER_DATABASE_NAME = "Server_db.sqlite"
 CLIENT_DATABASE_NAME = "Client_db"
