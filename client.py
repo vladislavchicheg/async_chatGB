@@ -51,8 +51,13 @@ def main():
     logger.debug("Keys sucsessfully loaded.")
     database = ClientDatabase(client_name)
     try:
-        transport = ClientTransport(server_port, server_address, database, client_name, client_passwd,
-                                    keys)
+        transport = ClientTransport(
+            server_port,
+            server_address,
+            database,
+            client_name,
+            client_passwd,
+            keys)
     except ServerError as error:
         message = QMessageBox()
         message.critical(start_dialog, 'Ошибка сервера', error.text)

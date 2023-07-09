@@ -15,7 +15,8 @@ STREAM_HANDLER = logging.StreamHandler(sys.stderr)
 STREAM_HANDLER.setFormatter(SERVER_FORMATTER)
 STREAM_HANDLER.setLevel(logging.ERROR)
 
-LOG_FILE = logging.handlers.TimedRotatingFileHandler(PATH, encoding='utf8', interval=1, when='midnight')
+LOG_FILE = logging.handlers.TimedRotatingFileHandler(
+    PATH, encoding='utf8', interval=1, when='midnight')
 LOG_FILE.setFormatter(SERVER_FORMATTER)
 
 LOGGER = logging.getLogger('server')

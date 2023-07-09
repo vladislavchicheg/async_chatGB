@@ -1,13 +1,13 @@
 """Unit-тесты утилит"""
 
+from common.utils import get_message, send_message
+from common.variables import RESPONSE, ERROR, USER, ACCOUNT_NAME, TIME, ACTION, PRESENCE, ENCODING
 import sys
 import os
 import unittest
 import json
 
 sys.path.append(os.path.join(os.getcwd(), '..'))
-from common.variables import RESPONSE, ERROR, USER, ACCOUNT_NAME, TIME, ACTION, PRESENCE, ENCODING
-from common.utils import get_message, send_message
 
 
 class TestSocket:
@@ -50,8 +50,12 @@ class UtilsTestCase(unittest.TestCase):
     def test_get_message(self):
         test_socket_ok = TestSocket(self.test_dict_response_ok)
         test_socket_err = TestSocket(self.test_dict_response_err)
-        self.assertEqual(get_message(test_socket_ok), self.test_dict_response_ok)
-        self.assertEqual(get_message(test_socket_err), self.test_dict_response_err)
+        self.assertEqual(
+            get_message(test_socket_ok),
+            self.test_dict_response_ok)
+        self.assertEqual(
+            get_message(test_socket_err),
+            self.test_dict_response_err)
 
 
 if __name__ == '__main__':

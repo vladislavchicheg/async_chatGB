@@ -7,14 +7,23 @@ import sys
 import time
 
 from common.decorators import log
-from common.variables import MAX_PACKAGE_LENGTH, ENCODING, DEFAULT_PORT, DEFAULT_IP_ADDRESS, RESPONSE, ERROR, ACTION, \
-    TIME, PRESENCE, USER, ACCOUNT_NAME, LIST_INFO, REMOVE_CONTACT, USERS_REQUEST, ADD_CONTACT, GET_CONTACTS
+from common.variables import MAX_PACKAGE_LENGTH, ENCODING,\
+    DEFAULT_PORT, DEFAULT_IP_ADDRESS, RESPONSE, ERROR,\
+    ACTION, TIME, PRESENCE, USER, ACCOUNT_NAME, LIST_INFO,\
+    REMOVE_CONTACT, USERS_REQUEST, ADD_CONTACT, \
+    GET_CONTACTS
 from error import ServerError
 
 client_logger = logging.getLogger('client')
 
+
 @log
 def get_message(sock):
+    """
+
+    :param sock:
+    :return:
+    """
     encoded_response = sock.recv(MAX_PACKAGE_LENGTH)
     json_response = encoded_response.decode(ENCODING)
     response = json.loads(json_response)
@@ -26,6 +35,11 @@ def get_message(sock):
 
 @log
 def send_message(sock, message):
+    """
+
+    :param sock:
+    :param message:
+    """
     js_message = json.dumps(message)
     encoded_message = js_message.encode(ENCODING)
     sock.send(encoded_message)
@@ -33,6 +47,12 @@ def send_message(sock, message):
 
 @log
 def arg_parser_server(default_port, default_address):
+    """
+
+    :param default_port:
+    :param default_address:
+    :return:
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", default=default_port, type=int, nargs="?")
     parser.add_argument("-a", default=default_address, nargs="?")
@@ -44,6 +64,11 @@ def arg_parser_server(default_port, default_address):
 
 @log
 def create_presence(account_name):
+    """
+
+    :param account_name:
+    :return:
+    """
     logger = logging.getLogger('client')
     out = {
         ACTION: PRESENCE,
@@ -52,12 +77,18 @@ def create_presence(account_name):
             ACCOUNT_NAME: account_name
         }
     }
-    logger.debug(f"Сформировано {PRESENCE} сообщение для пользователя {account_name}")
+    logger.debug(
+        f"Сформировано {PRESENCE} сообщение для пользователя {account_name}")
     return out
 
 
 @log
 def process_response_ans(message):
+    """
+
+    :param message:
+    :return:
+    """
     logger = logging.getLogger('client')
     logger.debug(f"Разбор приветственного сообщения от сервера: {message}")
     if RESPONSE in message:
@@ -70,6 +101,10 @@ def process_response_ans(message):
 
 @log
 def arg_parser_client():
+    """
+
+    :return:
+    """
     logger = logging.getLogger('client')
     parser = argparse.ArgumentParser()
     parser.add_argument('addr', default=DEFAULT_IP_ADDRESS, nargs='?')
@@ -85,13 +120,23 @@ def arg_parser_client():
     # проверим подходящий номер порта
     if not 1023 < server_port < 65536:
         logger.critical(
-            f'Попытка запуска клиента с неподходящим номером порта: {server_port}. Допустимы адреса с 1024 до 65535. Клиент завершается.')
+            f'Попытка запуска клиента с неподходящим номером порта: {server_port}.'
+            f' Допустимы адреса с 1024 до 65535. Клиент завершается.')
         exit(1)
 
     return server_address, server_port, client_name, client_passwd
 
+
 # Функция запрос контакт листа
+
+
 def contacts_list_request(sock, name):
+    """
+
+    :param sock:
+    :param name:
+    :return:
+    """
     client_logger.debug(f'Запрос контакт листа для пользователся {name}')
     req = {
         ACTION: GET_CONTACTS,
@@ -110,6 +155,12 @@ def contacts_list_request(sock, name):
 
 # Функция добавления пользователя в контакт лист
 def add_contact(sock, username, contact):
+    """
+
+    :param sock:
+    :param username:
+    :param contact:
+    """
     client_logger.debug(f'Создание контакта {contact}')
     req = {
         ACTION: ADD_CONTACT,
@@ -128,6 +179,12 @@ def add_contact(sock, username, contact):
 
 # Функция запроса списка известных пользователей
 def user_list_request(sock, username):
+    """
+
+    :param sock:
+    :param username:
+    :return:
+    """
     client_logger.debug(f'Запрос списка известных пользователей {username}')
     req = {
         ACTION: USERS_REQUEST,
@@ -144,6 +201,12 @@ def user_list_request(sock, username):
 
 # Функция удаления пользователя из контакт листа
 def remove_contact(sock, username, contact):
+    """
+
+    :param sock:
+    :param username:
+    :param contact:
+    """
     client_logger.debug(f'Создание контакта {contact}')
     req = {
         ACTION: REMOVE_CONTACT,
@@ -160,8 +223,15 @@ def remove_contact(sock, username, contact):
     print('Удачное удаление')
 
 
-# Функция инициализатор базы данных. Запускается при запуске, загружает данные в базу с сервера.
+# Функция инициализатор базы данных. Запускается при запуске, загружает
+# данные в базу с сервера.
 def database_load(sock, database, username):
+    """
+
+    :param sock:
+    :param database:
+    :param username:
+    """
     # Загружаем список известных пользователей
     try:
         users_list = user_list_request(sock, username)
@@ -178,5 +248,3 @@ def database_load(sock, database, username):
     else:
         for contact in contacts_list:
             database.add_contact(contact)
-
-
