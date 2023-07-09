@@ -4,6 +4,7 @@ from sqlalchemy import create_engine, Table, Column, Integer, String, Text, Meta
 from sqlalchemy.orm import mapper, sessionmaker
 import os
 import sys
+
 sys.path.append('../')
 
 
@@ -32,8 +33,10 @@ class ClientDatabase:
 
     # Конструктор класса:
     def __init__(self, name):
-        # Создаём движок базы данных, поскольку разрешено несколько клиентов одновременно, каждый должен иметь свою БД
-        # Поскольку клиент мультипоточный необходимо отключить проверки на подключения с разных потоков,
+        # Создаём движок базы данных, поскольку разрешено
+        # несколько клиентов одновременно, каждый должен иметь свою БД
+        # Поскольку клиент мультипоточный необходимо отключить
+        # проверки на подключения с разных потоков,
         # иначе sqlite3.ProgrammingError
         path = os.path.dirname(os.path.realpath(__file__))
         filename = f'client_{name}.db3'
@@ -89,7 +92,7 @@ class ClientDatabase:
     def add_contact(self, contact):
         if not self.session.query(
                 self.Contacts).filter_by(
-                name=contact).count():
+            name=contact).count():
             contact_row = self.Contacts(contact)
             self.session.add(contact_row)
             self.session.commit()
@@ -104,6 +107,7 @@ class ClientDatabase:
     # Функция добавления известных пользователей.
     # Пользователи получаются только с сервера, поэтому таблица очищается.
     def add_users(self, users_list):
+        '''Метод заполняющий таблицу известных пользователей.'''
         self.session.query(self.KnownUsers).delete()
         for user in users_list:
             user_row = self.KnownUsers(user)
@@ -112,31 +116,36 @@ class ClientDatabase:
 
     # Функция сохраняющяя сообщения
     def save_message(self, contact, direction, message):
-        message_row = self.MessageHistory(contact, direction, message)
+        '''Метод сохраняющий сообщение в базе данных.'''
+        message_row = self.MessageStat(contact, direction, message)
         self.session.add(message_row)
         self.session.commit()
 
     # Функция возвращающяя контакты
     def get_contacts(self):
+        '''Метод возвращающий список всех контактов.'''
         return [contact[0]
                 for contact in self.session.query(self.Contacts.name).all()]
 
     # Функция возвращающяя список известных пользователей
     def get_users(self):
+        '''Метод возвращающий список всех известных пользователей.'''
         return [user[0]
                 for user in self.session.query(self.KnownUsers.username).all()]
 
     # Функция проверяющяя наличие пользователя в известных
     def check_user(self, user):
+        '''Метод проверяющий существует ли пользователь.'''
         if self.session.query(
                 self.KnownUsers).filter_by(
-                username=user).count():
+            username=user).count():
             return True
         else:
             return False
 
     # Функция проверяющяя наличие пользователя контактах
     def check_contact(self, contact):
+        '''Метод проверяющий существует ли контакт.'''
         if self.session.query(self.Contacts).filter_by(name=contact).count():
             return True
         else:
@@ -144,6 +153,7 @@ class ClientDatabase:
 
     # Функция возвращающая историю переписки
     def get_history(self, contact):
+        '''Метод возвращающий историю сообщений с определённым пользователем.'''
         query = self.session.query(
             self.MessageHistory).filter_by(
             contact=contact)
@@ -156,16 +166,6 @@ class ClientDatabase:
 # отладка
 if __name__ == '__main__':
     test_db = ClientDatabase('test1')
-    # for i in ['test3', 'test4', 'test5']:
-    #    test_db.add_contact(i)
-    # test_db.add_contact('test4')
-    # test_db.add_users(['test1', 'test2', 'test3', 'test4', 'test5'])
-    # test_db.save_message('test2', 'in', f'Привет! я тестовое сообщение от {datetime.datetime.now()}!')
-    # test_db.save_message('test2', 'out', f'Привет! я другое тестовое сообщение от {datetime.datetime.now()}!')
-    # print(test_db.get_contacts())
-    # print(test_db.get_users())
-    # print(test_db.check_user('test1'))
-    # print(test_db.check_user('test10'))
+
     print(sorted(test_db.get_history('test2'), key=lambda item: item[3]))
-    # test_db.del_contact('test4')
-    # print(test_db.get_contacts())
+

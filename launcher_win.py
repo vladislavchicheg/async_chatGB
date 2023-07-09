@@ -25,7 +25,7 @@ def main():
             for i in range(clients_count):
                 process.append(
                     subprocess.Popen(
-                        f'python client.py -n test{i + 1} -p 123456',
+                        f'python client.py -n test{i + 1} -p 123',
                         creationflags=subprocess.CREATE_NEW_CONSOLE))
         elif action == 'x':
             while process:
