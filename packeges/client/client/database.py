@@ -1,6 +1,7 @@
 import datetime
 from common.variables import *
 from sqlalchemy import create_engine, Table, Column, Integer, String, Text, MetaData, DateTime
+from sqlalchemy.sql import default_comparator
 from sqlalchemy.orm import mapper, sessionmaker
 import os
 import sys

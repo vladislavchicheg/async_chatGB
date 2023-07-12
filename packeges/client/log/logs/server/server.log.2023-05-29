@@ -1,0 +1,27 @@
+2023-05-29 22:34:23,177 CRITICAL server_config.py Критическая ошибка
+2023-05-29 22:34:23,177 ERROR server_config.py Ошибка
+2023-05-29 22:34:23,177 DEBUG server_config.py Отладочная информация
+2023-05-29 22:34:23,177 INFO server_config.py Информационное сообщение
+2023-05-29 22:35:28,552 CRITICAL server_config.py Критическая ошибка
+2023-05-29 22:35:28,552 ERROR server_config.py Ошибка
+2023-05-29 22:35:28,552 DEBUG server_config.py Отладочная информация
+2023-05-29 22:35:28,552 INFO server_config.py Информационное сообщение
+2023-05-29 22:36:10,964 CRITICAL server_config.py Критическая ошибка
+2023-05-29 22:36:10,964 ERROR server_config.py Ошибка
+2023-05-29 22:36:10,964 DEBUG server_config.py Отладочная информация
+2023-05-29 22:36:10,964 INFO server_config.py Информационное сообщение
+2023-05-29 22:37:21,506 CRITICAL server_config.py Критическая ошибка
+2023-05-29 22:37:21,506 ERROR server_config.py Ошибка
+2023-05-29 22:37:21,506 DEBUG server_config.py Отладочная информация
+2023-05-29 22:37:21,506 INFO server_config.py Информационное сообщение
+2023-05-29 23:14:55,921 CRITICAL server.py Запущен сервер - порт: 7799 ; адрес:127.0.0.1
+2023-05-29 23:15:24,352 INFO server.py Запущен сервер - порт: 7799 ; адрес:127.0.0.1
+2023-05-29 23:15:41,012 INFO server.py Получено сообщение от клиента: {'action': 'presence', 'time': 1685387741.01212, 'user': {'login': 'Guest'}}
+2023-05-29 23:15:41,012 DEBUG server.py Отправлено сообщение клиенту: {'response': 200, 'alert': 'OK'}
+2023-05-29 23:17:02,938 ERROR server.py Принято некорретное сообщение от клиента:{'action': 'presence', 'time': 1685387741.01212, 'user': {'login': 'Guest'}}
+2023-05-29 23:17:50,573 INFO server.py Получено сообщение от клиента: {'action': 'presence'}
+2023-05-29 23:17:50,573 DEBUG server.py Отправлено сообщение клиенту: {'response': 400, 'error': 'Bad Request'}
+2023-05-29 23:19:30,801 INFO server.py Получено сообщение от клиента: {'action': 'presence'}
+2023-05-29 23:19:30,802 DEBUG server.py Отправлено сообщение клиенту: {'response': 400, 'error': 'Bad Request'}
+2023-05-29 23:21:07,612 INFO server.py Получено сообщение от клиента: {'action': 'presence'}
+2023-05-29 23:21:07,613 DEBUG server.py Отправлено сообщение клиенту: {'response': 400, 'error': 'Bad Request'}
